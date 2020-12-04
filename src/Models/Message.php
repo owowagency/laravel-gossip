@@ -3,6 +3,7 @@
 namespace OwowAgency\Gossip\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -10,7 +11,7 @@ use OwowAgency\Gossip\Tests\Support\Database\Factories\MessageFactory;
 
 class Message extends Model
 {
-    use HasFactory;
+    use AppliesHttpQuery, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -19,6 +20,18 @@ class Message extends Model
      */
     protected $fillable = [
         'conversation_id', 'user_id', 'body',
+    ];
+
+    /**
+     * Http queryable rules.
+     *
+     * @var array
+     */
+    protected $httpQueryable = [
+        'columns' => [
+            'created_at',
+            'updated_at',
+        ],
     ];
     
     /**
@@ -50,6 +63,21 @@ class Message extends Model
     public function conversation(): BelongsTo
     {
         return $this->belongsTo(Conversation::class);
+    }
+
+    /**
+     * Scope a query to only include messages of the given conversation.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOfConversation($query, Conversation $conversation)
+    {
+        return $query->whereHas(
+            'conversation',
+            fn($query) => $query->where('conversations.id', $conversation->id),
+        );
     }
 
     /**

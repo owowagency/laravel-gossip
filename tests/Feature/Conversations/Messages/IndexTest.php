@@ -1,22 +1,34 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Feature\Conversations;
+namespace OwowAgency\Gossip\Tests\Feature\Conversations\Messages;
 
 use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 
-class ShowTest extends TestCase
+class IndexTest extends TestCase
 {
     /** @test */
-    public function user_can_show_conversations(): void
+    public function user_can_index_messages_of_a_conversation(): void
     {
         [$user, $conversation] = $this->prepare();
 
         $response = $this->makeRequest($user, $conversation);
 
         $this->assertResponse($response);
+    }
+
+    /** @test */
+    public function user_cant_index_messages_of_other_conversation(): void
+    {
+        [$user, $conversation] = $this->prepare();
+
+        $other = User::factory()->create();
+
+        $response = $this->makeRequest($other, $conversation);
+
+        $this->assertResponse($response, 403);
     }
 
     /**
@@ -29,8 +41,10 @@ class ShowTest extends TestCase
         $user = User::factory()->create();
 
         $conversation = Conversation::factory()
-            ->hasUsers(1)
-            ->hasMessages(2)
+            ->hasUsers(2)
+            ->hasMessages(30, [
+                'user_id' => $user->id,
+            ])
             ->create();
 
         // Add user as participant.
@@ -49,7 +63,7 @@ class ShowTest extends TestCase
     private function makeRequest(User $user, Conversation $conversation): TestResponse
     {
         return $this->actingAs($user)
-            ->json('GET', 'conversations/' . $conversation->id);
+            ->json('GET', "/conversations/{$conversation->id}/messages");
     }
 
     /**

@@ -77,10 +77,8 @@ class IndexTest extends TestCase
     {
         $response->assertStatus($status);
 
-        if ($status !== 200) {
-            return;
+        if ($status === 200) {
+            $this->assertJsonStructureSnapshot($response);
         }
-
-        $this->assertJsonStructureSnapshot($response);
     }
 }
