@@ -7,11 +7,12 @@ use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use OwowAgency\Gossip\Models\Concerns\HasDefaultRelations;
 use OwowAgency\Gossip\Tests\Support\Database\Factories\ConversationFactory;
 
 class Conversation extends Model
 {
-    use AppliesHttpQuery, HasFactory;
+    use AppliesHttpQuery, HasDefaultRelations, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -30,6 +31,8 @@ class Conversation extends Model
     protected $httpQueryable = [
         'columns' => [
             'name',
+            'created_at',
+            'updated_at',
         ],
     ];
     
@@ -54,6 +57,21 @@ class Conversation extends Model
     }
 
     /**
+     * Scope a query to only include conversations of the given user.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOfUser($query, $user)
+    {
+        return $query->whereHas(
+            'users',
+            fn($query) => $query->where('users.id', $user->id),
+        );
+    }
+
+    /**
      * Determine if the given user is in the current model.
      *
      * @param  \App\Models\User|int|string  $user
@@ -64,6 +82,22 @@ class Conversation extends Model
         $userId = $user instanceof Model ? $user->id : $user;
 
         return $this->users()->where('users.id', $userId)->exists();
+    }
+
+    /**
+     * Get the relationship which should be eager loaded.
+     *
+     * @param  int  $messageCount
+     * @return array
+     */
+    public function getDefaultRelations(int $messageCount = 15): array
+    {
+        return [
+            'users',
+            'messages' => fn($query) => $query->with('user', 'users')
+                ->latest()
+                ->take($messageCount),
+        ];
     }
 
     /**

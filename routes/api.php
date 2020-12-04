@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use OwowAgency\Gossip\Http\Controllers\Conversations\ConversationController;
 use OwowAgency\Gossip\Http\Controllers\Conversations\Messages\MessageController;
+use OwowAgency\Gossip\Http\Controllers\Users\Conversations\ConversationController as UserConversationController;
 
 Route::middleware('auth')
     ->apiResource('conversations', ConversationController::class, [
@@ -14,3 +15,5 @@ Route::prefix('conversations/{conversation}')
     ->group(function () {
         Route::get('messages', MessageController::class);
     });
+
+Route::get('/users/{user}/conversations', [UserConversationController::class, 'index']);

@@ -1,6 +1,6 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Feature\Models\Conversations;
+namespace OwowAgency\Gossip\Tests\Feature\Conversations;
 
 use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;

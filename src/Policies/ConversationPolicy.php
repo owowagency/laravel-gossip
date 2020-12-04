@@ -17,8 +17,7 @@ class ConversationPolicy
      */
     public function before($user)
     {
-        // TODO Always return true for now until permissions are included.
-        return true;
+        // TODO Fix permissions.
     }
 
     /**
@@ -29,7 +28,8 @@ class ConversationPolicy
      */
     public function viewAny($user): bool
     {
-        return false;
+        // TODO Fix permissions.
+        return true;
     }
 
     /**
@@ -42,6 +42,18 @@ class ConversationPolicy
     public function view($user, Conversation $conversation): bool
     {
         return $conversation->hasUser($user);
+    }
+
+    /**
+     * Determine whether the user can view conversations of an other user.
+     *
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\User  $target
+     * @return bool
+     */
+    public function viewConversationsOf($user, $target): bool
+    {
+        return $user->is($target);
     }
 
     /**
@@ -64,6 +76,7 @@ class ConversationPolicy
      */
     public function update($user, Conversation $conversation): bool
     {
+        // TODO Fix permissions.
         return false;
     }
 
@@ -76,6 +89,7 @@ class ConversationPolicy
      */
     public function delete($user, Conversation $conversation): bool
     {
+        // TODO Fix permissions.
         return false;
     }
 }

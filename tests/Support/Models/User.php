@@ -4,11 +4,12 @@ namespace OwowAgency\Gossip\Tests\Support\Models;
 
 use Illuminate\Foundation\Auth\User as BaseUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use OwowAgency\Gossip\Models\Concerns\HasConversations;
 use OwowAgency\Gossip\Tests\Support\Database\Factories\UserFactory;
 
 class User extends BaseUser
 {
-    use HasFactory;
+    use HasConversations, HasFactory;
 
     /**
      * Create a new factory instance for the model.

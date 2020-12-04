@@ -1,6 +1,6 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Feature\Models\Conversations;
+namespace OwowAgency\Gossip\Tests\Feature\Conversations;
 
 use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
@@ -32,6 +32,9 @@ class ShowTest extends TestCase
             ->hasUsers(1)
             ->hasMessages(2)
             ->create();
+
+        // Add user as participant.
+        $conversation->users()->attach($user);
 
         return [$user, $conversation];
     }

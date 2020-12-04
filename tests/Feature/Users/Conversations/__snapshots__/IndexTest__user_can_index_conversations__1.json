@@ -1,0 +1,86 @@
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "Kattie Graham",
+            "created_at": "2020-12-04T10:37:20.000000Z",
+            "updated_at": "2020-12-04T10:37:20.000000Z",
+            "users": [
+                {
+                    "id": 1,
+                    "created_at": "2020-12-04T10:37:20.000000Z",
+                    "updated_at": "2020-12-04T10:37:20.000000Z",
+                    "pivot": {
+                        "conversation_id": 1,
+                        "user_id": 1
+                    }
+                }
+            ],
+            "messages": []
+        },
+        {
+            "id": 2,
+            "name": "Ericka Veum",
+            "created_at": "2020-12-04T10:37:20.000000Z",
+            "updated_at": "2020-12-04T10:37:20.000000Z",
+            "users": [
+                {
+                    "id": 1,
+                    "created_at": "2020-12-04T10:37:20.000000Z",
+                    "updated_at": "2020-12-04T10:37:20.000000Z",
+                    "pivot": {
+                        "conversation_id": 2,
+                        "user_id": 1
+                    }
+                }
+            ],
+            "messages": []
+        },
+        {
+            "id": 3,
+            "name": "Neha Upton",
+            "created_at": "2020-12-04T10:37:20.000000Z",
+            "updated_at": "2020-12-04T10:37:20.000000Z",
+            "users": [
+                {
+                    "id": 1,
+                    "created_at": "2020-12-04T10:37:20.000000Z",
+                    "updated_at": "2020-12-04T10:37:20.000000Z",
+                    "pivot": {
+                        "conversation_id": 3,
+                        "user_id": 1
+                    }
+                }
+            ],
+            "messages": []
+        }
+    ],
+    "first_page_url": "http:\/\/localhost\/users\/1\/conversations?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http:\/\/localhost\/users\/1\/conversations?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "http:\/\/localhost\/users\/1\/conversations?page=1",
+            "label": 1,
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "http:\/\/localhost\/users\/1\/conversations",
+    "per_page": 15,
+    "prev_page_url": null,
+    "to": 3,
+    "total": 3
+}
