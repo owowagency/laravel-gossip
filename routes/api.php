@@ -16,4 +16,5 @@ Route::prefix('conversations/{conversation}')
         Route::get('messages', MessageController::class);
     });
 
-Route::get('/users/{user}/conversations', [UserConversationController::class, 'index']);
+Route::get('/users/{user}/conversations', [UserConversationController::class, 'index'])
+    ->middleware('auth');
