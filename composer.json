@@ -1,0 +1,59 @@
+{
+    "name": "owowagency/laravel-gossip",
+    "description": "A package of conversation features for the Laravel framework.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Albert Pratomo",
+            "email": "albert@owow.io"
+        },
+        {
+            "name": "Thomas van der Veen",
+            "email": "thomas@owow.io"
+        },
+        {
+            "name": "Dees Oomens",
+            "email": "dees@owow.io"
+        }
+    ],
+    "keywords": [
+        "Laravel",
+        "Gossip",
+        "Converstaion"
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^8.0",
+        "owowagency/laravel-resources": "^3.0",
+        "owowagency/applies-http-query": "^2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0",
+        "owowagency/laravel-test-response": "^0.0.5",
+        "owowagency/phpunit-snapshot-assertions": "^0.0.8",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "OwowAgency\\Gossip\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "tests/Support/database/factories/ConversationFactory.php",
+            "tests/Support/database/factories/MessageFactory.php",
+            "tests/Support/database/factories/UserFactory.php"
+        ],
+        "psr-4": {
+            "OwowAgency\\Gossip\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GossipServiceProvider"
+            ]
+        }
+    }
+}
