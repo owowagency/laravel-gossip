@@ -1,13 +1,11 @@
 <?php
 
-namespace OwowAgency\Gossip\Models\Concerns;
+namespace OwowAgency\Gossip\Models\Contracts;
 
-use OwowAgency\Gossip\Models\Message;
-use OwowAgency\Gossip\Models\Conversation;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-trait HasConversations
+interface HasConversationContract
 {
     /**
      * The relationship to all the conversation which the user is participating
@@ -15,28 +13,19 @@ trait HasConversations
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function conversations(): BelongsToMany
-    {
-        return $this->belongsToMany(Conversation::class);
-    }
+    public function conversations(): BelongsToMany;
 
     /**
      * The relationship to all the messages send by the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function messages(): HasMany
-    {
-        return $this->hasMany(Message::class);
-    }
+    public function messages(): HasMany;
 
     /**
      * The relationship to all the messages read by the user.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function readMessages(): BelongsToMany
-    {
-        return $this->belongsToMany(Message::class);
-    }
+    public function readMessages(): BelongsToMany;
 }
