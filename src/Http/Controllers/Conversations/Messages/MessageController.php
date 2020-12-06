@@ -4,7 +4,6 @@ namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Auth;
 use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Http\Controllers\Controller;
