@@ -20,6 +20,18 @@ class IndexTest extends TestCase
     }
 
     /** @test */
+    public function user_can_index_and_mark_messages_as_read(): void
+    {
+        [$user, $conversation] = $this->prepare();
+
+        $response = $this->makeRequest($user, $conversation, [
+            'mark_messages_as_read' => true,
+        ]);
+
+        $this->assertResponse($response);
+    }
+
+    /** @test */
     public function user_cant_index_messages_of_other_conversation(): void
     {
         [$user, $conversation] = $this->prepare();
@@ -58,12 +70,18 @@ class IndexTest extends TestCase
      *
      * @param  \OwowAgency\Gossip\Tests\Support\Models\User  $user
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
+     * @param  array  $params
      * @return \Illuminate\Testing\TestResponse
      */
-    private function makeRequest(User $user, Conversation $conversation): TestResponse
-    {
+    private function makeRequest(
+        User $user,
+        Conversation $conversation,
+        array $params = []
+    ): TestResponse {
+        $url = "/conversations/{$conversation->id}/messages?" . http_build_query($params);
+
         return $this->actingAs($user)
-            ->json('GET', "/conversations/{$conversation->id}/messages");
+            ->json('GET', $url);
     }
 
     /**

@@ -167,9 +167,18 @@ class Message extends Model
     {
         $collection = new MessageCollection($models);
 
-        return $collection->markAsRead(
-            Auth::user(),
-            request()->request->getBoolean('mark_messages_as_read', false)
+        // If there is not authenticated user we can return the collection
+        // immediately. This because we can't mark the messages as read.
+        // Usually, this will only be the case while performing unit tests.
+        if (Auth::guest()) {
+            return $collection;
+        }
+
+        $markAsRead = filter_var(
+            request()->get('mark_messages_as_read', false),
+            FILTER_VALIDATE_BOOLEAN
         );
+
+        return $collection->markAsRead(Auth::user(), $markAsRead);
     }
 }

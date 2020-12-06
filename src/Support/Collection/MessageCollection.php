@@ -57,5 +57,9 @@ class MessageCollection extends Collection
         $method = $markAsRead ? 'syncWithoutDetaching' : 'detach';
 
         $model->readMessages()->$method($this->pluck('id'));
+
+        // Reload the users relation so that in the response we can see who read
+        // the message.
+        $this->load('users');
     }
 }

@@ -26,7 +26,23 @@ class Controller extends \Illuminate\Routing\Controller
 
         $paginator = $paginator->setCollection($resources->collection);
 
-        return new JsonResponse($paginator);
+        return ok($paginator);
+    }
+
+    /**
+     * Create a resource response.
+     *
+     * @param  \Illuminate\Database\Eloquent\Model|mixed  $model
+     * @param  string  $resourceConfig
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function createResourceResponse(
+        $model,
+        string $resourceConfig
+    ): JsonResponse {
+        $resource = config("gossip.resources.$resourceConfig");
+
+        return ok(new $resource($model));
     }
 
     /**

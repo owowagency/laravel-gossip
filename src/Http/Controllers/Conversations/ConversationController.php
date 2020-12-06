@@ -41,8 +41,6 @@ class ConversationController extends Controller
 
         $conversation->load($conversation->getDefaultRelations());
 
-        $resource = config('gossip.resources.conversation');
-
-        return ok(new $resource($conversation));
+        return $this->createResourceResponse($conversation, 'conversation');
     }
 }
