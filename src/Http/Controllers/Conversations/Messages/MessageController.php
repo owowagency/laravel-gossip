@@ -12,10 +12,10 @@ class MessageController extends Controller
     /**
      * Paginate the messages of the given conversation.
      *
-     * @param  int  $conversationId
+     * @param  int|string  $conversationId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function __invoke(int $conversationId): JsonResponse
+    public function __invoke($conversationId): JsonResponse
     {
         $conversation = Conversation::findOrFail($conversationId);
 
