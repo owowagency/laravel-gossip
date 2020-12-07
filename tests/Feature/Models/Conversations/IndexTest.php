@@ -10,7 +10,7 @@ use OwowAgency\Gossip\Tests\Support\Models\User;
 class IndexTest extends TestCase
 {
     /** @test */
-    public function user_can_index_settings(): void
+    public function user_can_index_conversations(): void
     {
         [$user] = $this->prepare();
 

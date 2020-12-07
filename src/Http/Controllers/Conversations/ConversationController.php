@@ -29,10 +29,10 @@ class ConversationController extends Controller
     /**
      * Returns the model instance for the show action.
      *
-     * @param  int  $conversationId
+     * @param  int|string  $conversationId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(int $conversationId)
+    public function show($conversationId)
     {
         $conversation = Conversation::findOrFail($conversationId);
 
