@@ -1,5 +1,7 @@
 # Gossip
 
+![Logo](https://i.imgur.com/cYnIr1B.png)
+
 A package of chatting features for the Laravel framework.
 
 # Installation
