@@ -17,7 +17,8 @@ trait HasConversations
      */
     public function conversations(): BelongsToMany
     {
-        return $this->belongsToMany(Conversation::class);
+        return $this->belongsToMany(Conversation::class)
+            ->withTimestamps();
     }
 
     /**
@@ -37,6 +38,7 @@ trait HasConversations
      */
     public function readMessages(): BelongsToMany
     {
-        return $this->belongsToMany(Message::class);
+        return $this->belongsToMany(Message::class)
+            ->withTimestamps();
     }
 }

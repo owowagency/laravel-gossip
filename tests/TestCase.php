@@ -7,6 +7,7 @@ use OwowAgency\Gossip\GossipServiceProvider;
 use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use OwowAgency\Gossip\Tests\Support\TestServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithTime;
 use OwowAgency\LaravelResources\LaravelResourcesServiceProvider;
 
@@ -38,6 +39,11 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app)
     {
         return [
+            // We first need to load our testing service provider so that the
+            // migrations used for testing are being ran first. Otherwise, we'll
+            // get a foreign key constraint because our tables need a
+            // relationship to the users table.
+            TestServiceProvider::class,
             GossipServiceProvider::class,
             LaravelResourcesServiceProvider::class,
         ];
