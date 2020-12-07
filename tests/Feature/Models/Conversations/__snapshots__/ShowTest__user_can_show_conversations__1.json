@@ -1,0 +1,45 @@
+{
+    "id": 1,
+    "name": "Alec Grady V",
+    "created_at": "2020-12-07T06:58:52.000000Z",
+    "updated_at": "2020-12-07T06:58:52.000000Z",
+    "users": [
+        {
+            "id": 2,
+            "created_at": "2020-12-07T06:58:52.000000Z",
+            "updated_at": "2020-12-07T06:58:52.000000Z",
+            "pivot": {
+                "conversation_id": 1,
+                "user_id": 2
+            }
+        }
+    ],
+    "messages": [
+        {
+            "id": 1,
+            "conversation_id": 1,
+            "body": "Incidunt qui saepe omnis ab et est magni perspiciatis. Quia voluptatem omnis quisquam architecto molestiae. Ducimus possimus eaque tempore quod et earum.",
+            "created_at": "2020-12-07T06:58:52.000000Z",
+            "updated_at": "2020-12-07T06:58:52.000000Z",
+            "current_user_read_message": null,
+            "user": {
+                "id": 3,
+                "created_at": "2020-12-07T06:58:52.000000Z",
+                "updated_at": "2020-12-07T06:58:52.000000Z"
+            }
+        },
+        {
+            "id": 2,
+            "conversation_id": 1,
+            "body": "Sint beatae molestiae numquam sed ratione. Consequatur consequuntur consequuntur rem eius fugit assumenda. Similique perspiciatis eos esse aut sunt eaque dolor.",
+            "created_at": "2020-12-07T06:58:52.000000Z",
+            "updated_at": "2020-12-07T06:58:52.000000Z",
+            "current_user_read_message": null,
+            "user": {
+                "id": 4,
+                "created_at": "2020-12-07T06:58:52.000000Z",
+                "updated_at": "2020-12-07T06:58:52.000000Z"
+            }
+        }
+    ]
+}

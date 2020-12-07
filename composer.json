@@ -41,9 +41,9 @@
     },
     "autoload-dev": {
         "files": [
-            "tests/Support/database/factories/ConversationFactory.php",
-            "tests/Support/database/factories/MessageFactory.php",
-            "tests/Support/database/factories/UserFactory.php"
+            "tests/Support/Database/Factories/ConversationFactory.php",
+            "tests/Support/Database/Factories/MessageFactory.php",
+            "tests/Support/Database/Factories/UserFactory.php"
         ],
         "psr-4": {
             "OwowAgency\\Gossip\\Tests\\": "tests/"
