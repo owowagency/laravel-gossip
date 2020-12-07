@@ -17,19 +17,19 @@ class MessageResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            'id' => $this->resource->id,
-            'conversation_id' => $this->resource->conversation_id,
-            'body' => $this->resource->body,
-            'created_at' => $this->resource->created_at,
-            'updated_at' => $this->resource->updated_at,
+            'id' => $this->id,
+            'conversation_id' => $this->conversation_id,
+            'body' => $this->body,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'current_user_read_message' => $this->getReadAtTimestamp(),
             'user' => $this->whenLoaded(
                 'user',
-                fn() => resource($this->resource->user)
+                fn() => resource($this->user)
             ),
             'conversation' => $this->whenLoaded(
                 'conversation',
-                fn() => resource($this->resource->conversation)
+                fn() => resource($this->conversation)
             ),
         ];
     }
@@ -42,15 +42,19 @@ class MessageResource extends JsonResource
      */
     private function getReadAtTimestamp(): ?Carbon
     {
-        if (! $this->resource->relationLoaded('users') || Auth::guest()) {
+        if (! $this->relationLoaded('users') || Auth::guest()) {
             return null;
         }
 
         // Find the current authenticated user in the users relation.
-        $user = $this->resource->users->first(function ($user) {
+        $user = $this->users->first(function ($user) {
             return Auth::user()->is($user);
         });
 
-        return optional($user)->created_at;
+        if ($user === null) {
+            return null;
+        }
+
+        return $user->pivot->created_at;
     }
 }

@@ -17,17 +17,17 @@ class ConversationResource extends JsonResource
         $messageResource = config('gossip.resources.message');
 
         return [
-            'id' => $this->resource->id,
-            'name' => $this->resource->name,
-            'created_at' => $this->resource->created_at,
-            'updated_at' => $this->resource->updated_at,
+            'id' => $this->id,
+            'name' => $this->name,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'users' => $this->whenLoaded(
                 'users',
-                fn() => resource($this->resource->users)
+                fn() => resource($this->users)
             ),
             'messages' => $this->whenLoaded(
                 'messages',
-                fn() => $messageResource::collection($this->resource->messages)
+                fn() => $messageResource::collection($this->messages)
             ),
         ];
     }
