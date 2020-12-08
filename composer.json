@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "OwowAgency\\Gossip\\": "src/"
+            "OwowAgency\\Gossip\\": "src/",
+            "OwowAgency\\Gossip\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {

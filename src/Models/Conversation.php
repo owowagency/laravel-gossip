@@ -5,10 +5,10 @@ namespace OwowAgency\Gossip\Models;
 use Illuminate\Database\Eloquent\Model;
 use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use OwowAgency\Gossip\Factories\ConversationFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use OwowAgency\Gossip\Models\Concerns\HasDefaultRelations;
-use OwowAgency\Gossip\Tests\Support\Database\Factories\ConversationFactory;
 
 class Conversation extends Model
 {

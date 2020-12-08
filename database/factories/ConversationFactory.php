@@ -1,6 +1,6 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Support\Database\Factories;
+namespace OwowAgency\Gossip\Factories;
 
 use OwowAgency\Gossip\Models\Conversation;
 use Illuminate\Database\Eloquent\Factories\Factory;
