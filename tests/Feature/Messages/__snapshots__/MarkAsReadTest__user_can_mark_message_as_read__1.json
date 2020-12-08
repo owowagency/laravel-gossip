@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "conversation_id": 1,
+    "body": "Magnam odio velit fugiat voluptate exercitationem eos. Veniam laborum aliquid est excepturi deserunt sunt. Nesciunt adipisci possimus quisquam totam explicabo.",
+    "created_at": "2020-12-06T08:35:06.000000Z",
+    "updated_at": "2020-12-06T08:35:06.000000Z",
+    "current_user_read_message": "2020-12-06T08:35:06.000000Z",
+    "user": {
+        "id": 2,
+        "created_at": "2020-12-06T08:35:06.000000Z",
+        "updated_at": "2020-12-06T08:35:06.000000Z"
+    },
+    "conversation": {
+        "id": 1,
+        "name": "Johnnie Brown IV",
+        "created_at": "2020-12-06T08:35:06.000000Z",
+        "updated_at": "2020-12-06T08:35:06.000000Z"
+    }
+}

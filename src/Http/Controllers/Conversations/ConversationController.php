@@ -2,6 +2,7 @@
 
 namespace OwowAgency\Gossip\Http\Controllers\Conversations;
 
+use Illuminate\Http\JsonResponse;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
@@ -12,11 +13,11 @@ class ConversationController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $this->authorize('viewAny', [Conversation::class]);
 
-        $conversations = Conversation::with($this->relations(3))
+        $conversations = Conversation::withRelations(3)
             ->httpQuery()
             ->paginate();
 
@@ -32,32 +33,14 @@ class ConversationController extends Controller
      * @param  int|string  $conversationId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($conversationId)
+    public function show($conversationId): JsonResponse
     {
         $conversation = Conversation::findOrFail($conversationId);
 
         $this->authorize('view', $conversation);
 
-        $conversation->load($this->relations());
+        $conversation->load($conversation->getDefaultRelations());
 
-        $resource = config('gossip.resources.conversation');
-
-        return ok(new $resource($conversation));
-    }
-
-    /**
-     * Get the relationship which should be eager loaded.
-     *
-     * @param  int  $messageCount
-     * @return array
-     */
-    protected function relations(int $messageCount = 15): array
-    {
-        return [
-            'users',
-            'messages' => fn($query) => $query->with('user', 'users')
-                ->latest()
-                ->take($messageCount),
-        ];
+        return $this->createResourceResponse($conversation, 'conversation');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Feature\Models\Conversations;
+namespace OwowAgency\Gossip\Tests\Feature\Conversations;
 
 use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
@@ -33,6 +33,9 @@ class ShowTest extends TestCase
             ->hasMessages(2)
             ->create();
 
+        // Add user as participant.
+        $conversation->users()->attach($user);
+
         return [$user, $conversation];
     }
 
@@ -60,10 +63,8 @@ class ShowTest extends TestCase
     {
         $response->assertStatus($status);
 
-        if ($status !== 200) {
-            return;
+        if ($status === 200) {
+            $this->assertJsonStructureSnapshot($response);
         }
-
-        $this->assertJsonStructureSnapshot($response);
     }
 }

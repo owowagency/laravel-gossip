@@ -1,6 +1,6 @@
 <?php
 
-namespace OwowAgency\Gossip\Tests\Feature\Models\Conversations;
+namespace OwowAgency\Gossip\Tests\Feature\Conversations;
 
 use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
@@ -60,10 +60,8 @@ class IndexTest extends TestCase
     {
         $response->assertStatus($status);
 
-        if ($status !== 200) {
-            return;
+        if ($status === 200) {
+            $this->assertJsonStructureSnapshot($response);
         }
-
-        $this->assertJsonStructureSnapshot($response);
     }
 }

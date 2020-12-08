@@ -4,8 +4,8 @@ namespace OwowAgency\Gossip\Tests;
 
 use OwowAgency\Snapshots\MatchesSnapshots;
 use OwowAgency\Gossip\GossipServiceProvider;
-use OwowAgency\Gossip\Tests\Support\Models\User;
 use OwowAgency\LaravelTestResponse\TestResponse;
+use OwowAgency\Gossip\Tests\Support\Models\User;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use OwowAgency\Gossip\Tests\Support\TestServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithTime;
@@ -26,6 +26,7 @@ abstract class TestCase extends BaseTestCase
 
         config(['gossip.user_model' => User::class]);
 
+        // Refresh the database.
         $this->artisan('migrate:fresh');
     }
 
