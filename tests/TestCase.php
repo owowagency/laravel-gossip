@@ -2,8 +2,8 @@
 
 namespace OwowAgency\Gossip\Tests;
 
+use OwowAgency\Gossip\ServiceProvider;
 use OwowAgency\Snapshots\MatchesSnapshots;
-use OwowAgency\Gossip\GossipServiceProvider;
 use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -44,7 +44,7 @@ abstract class TestCase extends BaseTestCase
             // get a foreign key constraint because our tables need a
             // relationship to the users table.
             TestServiceProvider::class,
-            GossipServiceProvider::class,
+            ServiceProvider::class,
             LaravelResourcesServiceProvider::class,
         ];
     }
