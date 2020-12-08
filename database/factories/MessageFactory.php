@@ -4,7 +4,6 @@ namespace OwowAgency\Gossip\Factories;
 
 use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Models\Conversation;
-use OwowAgency\Gossip\Tests\Support\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MessageFactory extends Factory
@@ -23,9 +22,11 @@ class MessageFactory extends Factory
      */
     public function definition()
     {
+        $userModel = config('gossip.user_model');
+
         return [
             'conversation_id' => Conversation::factory(),
-            'user_id' => User::factory(),
+            'user_id' => $userModel::factory(),
             'body' => $this->faker->text,
         ];
     }

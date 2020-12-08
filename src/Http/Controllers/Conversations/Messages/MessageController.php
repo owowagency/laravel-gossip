@@ -26,6 +26,7 @@ class MessageController extends Controller
         $messages = Message::with('user', 'users')
             ->ofConversation($conversation)
             ->httpQuery()
+            ->latest()
             ->paginate();
 
         return $this->createPaginatedResponse(

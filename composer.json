@@ -42,8 +42,6 @@
     },
     "autoload-dev": {
         "files": [
-            "tests/Support/Database/Factories/ConversationFactory.php",
-            "tests/Support/Database/Factories/MessageFactory.php",
             "tests/Support/Database/Factories/UserFactory.php"
         ],
         "psr-4": {
