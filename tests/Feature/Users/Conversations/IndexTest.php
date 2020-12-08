@@ -10,6 +10,18 @@ use OwowAgency\Gossip\Tests\Support\Models\User;
 class IndexTest extends TestCase
 {
     /** @test */
+    public function admin_can_index_conversations(): void
+    {
+        [$user] = $this->prepare();
+
+        config(['testing.is_admin' => true]);
+
+        $response = $this->makeRequest($user);
+
+        $this->assertResponse($response);
+    }
+
+    /** @test */
     public function user_can_index_conversations(): void
     {
         [$user] = $this->prepare();

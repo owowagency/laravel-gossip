@@ -4,42 +4,31 @@ namespace OwowAgency\Gossip\Policies;
 
 use OwowAgency\Gossip\Models\Conversation;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 
 class ConversationPolicy
 {
     use HandlesAuthorization;
 
     /**
-     * Check if the user has special privileges.
-     *
-     * @param \App\Models\User $user
-     * @return bool|void
-     */
-    public function before($user)
-    {
-        // TODO Fix permissions.
-    }
-
-    /**
      * Determine whether the user can index conversations.
      *
-     * @param \App\Models\User $user
+     * @param \OwowAgency\Gossip\Models\Contracts\HasConversationContract $user
      * @return bool
      */
-    public function viewAny($user): bool
+    public function viewAny(HasConversationContract $user): bool
     {
-        // TODO Fix permissions.
-        return true;
+        return $user->can('view any conversation');
     }
 
     /**
      * Determine whether the user can view the conversation.
      *
-     * @param \App\Models\User $user
+     * @param \OwowAgency\Gossip\Models\Contracts\HasConversationContract $user
      * @param \OwowAgency\Gossip\Models\Conversation $conversation
      * @return bool
      */
-    public function view($user, Conversation $conversation): bool
+    public function view(HasConversationContract $user, Conversation $conversation): bool
     {
         return $conversation->hasUser($user);
     }
@@ -47,11 +36,11 @@ class ConversationPolicy
     /**
      * Determine whether the user can view conversations of an other user.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $target
+     * @param  \OwowAgency\Gossip\Models\Contracts\HasConversationContract  $user
+     * @param  \OwowAgency\Gossip\Models\Contracts\HasConversationContract  $target
      * @return bool
      */
-    public function viewConversationsOf($user, $target): bool
+    public function viewConversationsOf(HasConversationContract $user, $target): bool
     {
         return $user->is($target);
     }
@@ -59,35 +48,34 @@ class ConversationPolicy
     /**
      * Determine whether the user can create conversations.
      *
-     * @param \App\Models\User $user
+     * @param \OwowAgency\Gossip\Models\Contracts\HasConversationContract $user
      * @return bool
      */
-    public function create($user): bool
+    public function create(HasConversationContract $user): bool
     {
-        return false;
+        return $user->can('create conversations');
     }
 
     /**
      * Determine whether the user can update conversations.
      *
-     * @param \App\Models\User $user
+     * @param \OwowAgency\Gossip\Models\Contracts\HasConversationContract $user
      * @param \OwowAgency\Gossip\Models\Conversation $conversation
      * @return bool
      */
-    public function update($user, Conversation $conversation): bool
+    public function update(HasConversationContract $user, Conversation $conversation): bool
     {
-        // TODO Fix permissions.
-        return false;
+        return $user->can('update conversations');
     }
 
     /**
      * Determine whether the user can delete the conversation.
      *
-     * @param \App\Models\User $user
+     * @param \OwowAgency\Gossip\Models\Contracts\HasConversationContract $user
      * @param \OwowAgency\Gossip\Models\Conversation $conversation
      * @return bool
      */
-    public function delete($user, Conversation $conversation): bool
+    public function delete(HasConversationContract $user, Conversation $conversation): bool
     {
         // TODO Fix permissions.
         return false;
