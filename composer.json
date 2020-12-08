@@ -25,7 +25,8 @@
         "php": "^7.4|^8.0",
         "laravel/framework": "^8.0",
         "owowagency/laravel-resources": "^3.0",
-        "owowagency/applies-http-query": "^2.0"
+        "owowagency/applies-http-query": "^2.0",
+        "spatie/laravel-permission": "^3.18"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",

@@ -6,17 +6,19 @@ use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class IndexTest extends TestCase
 {
     /** @test */
-    public function admin_can_index_conversations(): void
+    public function admin_can_index_conversations_of_other(): void
     {
         [$user] = $this->prepare();
 
-        config(['testing.is_admin' => true]);
+        $admin = User::factory()->create();
+        $admin->assignRole(Role::ADMIN);
 
-        $response = $this->makeRequest($user);
+        $response = $this->makeRequest($admin, $user);
 
         $this->assertResponse($response);
     }
