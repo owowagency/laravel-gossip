@@ -42,4 +42,6 @@ php artisan vendor:publish --provider="OwowAgency\Gossip\GossipServiceProvider" 
 
 ## Policies
 
+TODO: Also inform about the roles and permissions.
+
 # Usage
