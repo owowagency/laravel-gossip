@@ -92,20 +92,17 @@ class Controller extends BaseController
      * Tries to retrieve the model.
      *
      * @param  mixed  $value
-     * @param  string|null  $modelClass
      * @return \Illuminate\Database\Eloquent\Model
      *
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
-    public function getModel($value, string $modelClass = null): Model
+    public function getModel($value): Model
     {
         if ($value instanceof Model) {
             return $value;
         }
 
-        $modelClass = $modelClass ?? $this->modelClass;
-
-        $instance = new $modelClass;
+        $instance = new $this->modelClass;
 
         $model = $instance->resolveRouteBinding($value);
 

@@ -17,12 +17,12 @@ class MessageController extends Controller
      */
     public function __invoke(Request $request, $conversationId): JsonResponse
     {
-        $conversationId = $this->getModel($conversationId);
+        $conversation = $this->getModel($conversationId);
 
-        $this->authorize('view', $conversationId);
+        $this->authorize('view', $conversation);
 
         $messages = config('gossip.models.message')::with('user', 'users')
-            ->ofConversation($conversationId)
+            ->ofConversation($conversation)
             ->httpQuery()
             ->latest()
             ->paginate();
