@@ -11,27 +11,13 @@ class MessageCollection extends Collection
      * Mark messages as read if the force parameter is set to true.
      *
      * @param  \OwowAgency\Gossip\Models\Contracts\HasConversationContract  $model
-     * @param  bool  $force
      * @return \OwowAgency\Gossip\Support\Collection\MessageCollection
      */
-    public function markAsRead(HasConversationContract $model, bool $force = false): MessageCollection
+    public function markAsRead(HasConversationContract $model): MessageCollection
     {
-        if ($force) {
-            $this->updateReadAtStatus($model, true);
-        }
+        $this->updateReadAtStatus($model, true);
 
         return $this;
-    }
-
-    /**
-     * Force mark the messages as read.
-     *
-     * @param  \OwowAgency\Gossip\Models\Contracts\HasConversationContract  $model
-     * @return \OwowAgency\Gossip\Support\Collection\MessageCollection
-     */
-    public function forceMarkAsRead(HasConversationContract $model): MessageCollection
-    {
-        return $this->markAsRead($model, true);
     }
 
     /**

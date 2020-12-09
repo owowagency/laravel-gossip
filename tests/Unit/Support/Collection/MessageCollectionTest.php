@@ -18,37 +18,7 @@ class MessageCollectionTest extends TestCase
 
         $collection = new MessageCollection($messages);
 
-        $collection->markAsRead($user, true);
-
-        foreach ($this->getDatabaseAttributes($collection, $user) as $attributes) {
-            $this->assertDatabaseHas('message_user', $attributes);
-        }
-    }
-
-    /** @test */
-    public function messages_can_be_marked_as_read_only_when_force(): void
-    {
-        $user = User::factory()->create();
-        $messages = Message::factory()->count(5)->create();
-
-        $collection = new MessageCollection($messages);
-
-        $collection->markAsRead($user, false);
-
-        foreach ($this->getDatabaseAttributes($collection, $user) as $attributes) {
-            $this->assertDatabaseMissing('message_user', $attributes);
-        }
-    }
-
-    /** @test */
-    public function messages_can_be_force_marked_as_read(): void
-    {
-        $user = User::factory()->create();
-        $messages = Message::factory()->count(5)->create();
-
-        $collection = new MessageCollection($messages);
-
-        $collection->forceMarkAsRead($user);
+        $collection->markAsRead($user);
 
         foreach ($this->getDatabaseAttributes($collection, $user) as $attributes) {
             $this->assertDatabaseHas('message_user', $attributes);

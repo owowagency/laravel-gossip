@@ -20,7 +20,7 @@ class ConversationController extends Controller
 
         $this->authorize('viewConversationsOf', [Conversation::class, $user]);
 
-        $conversations = Conversation::withRelations(3)
+        $conversations = Conversation::withDefaultRelations(3)
             ->ofUser($user)
             ->httpQuery()
             ->paginate();

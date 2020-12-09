@@ -60,7 +60,7 @@ class MarkAsReadTest extends TestCase
     private function makeRequest(User $user, Message $message): TestResponse
     {
         return $this->actingAs($user)
-            ->json('post', 'messages/' . $message->id . '/read');
+            ->json('post', '/messages/' . $message->id . '/read');
     }
 
     /**
