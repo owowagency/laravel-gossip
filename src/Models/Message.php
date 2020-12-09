@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Factories\MessageFactory;
-use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
+use OwowAgency\Gossip\Models\Concerns\HasDateScopes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -15,7 +15,7 @@ use OwowAgency\Gossip\Support\Exceptions\RelationNotLoadedException;
 
 class Message extends Model
 {
-    use AppliesHttpQuery, HasFactory;
+    use HasDateScopes, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -24,18 +24,6 @@ class Message extends Model
      */
     protected $fillable = [
         'conversation_id', 'user_id', 'body',
-    ];
-
-    /**
-     * Http queryable rules.
-     *
-     * @var array
-     */
-    protected $httpQueryable = [
-        'columns' => [
-            'created_at',
-            'updated_at',
-        ],
     ];
     
     /**

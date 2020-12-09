@@ -56,6 +56,7 @@ abstract class TestCase extends BaseTestCase
             TestServiceProvider::class,
             ServiceProvider::class,
             LaravelResourcesServiceProvider::class,
+            \Spatie\QueryBuilder\QueryBuilderServiceProvider::class,
             PermissionServiceProvider::class,
         ];
     }

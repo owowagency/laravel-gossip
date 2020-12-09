@@ -3,6 +3,7 @@
 namespace OwowAgency\Gossip\Tests\Feature\Conversations\Messages;
 
 use Illuminate\Testing\TestResponse;
+use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
@@ -36,6 +37,8 @@ class IndexTest extends TestCase
     /** @test */
     public function user_can_index_and_mark_messages_as_read(): void
     {
+        config(['query-builder.disable_invalid_filter_query_exception' => false]);
+
         [$user, $conversation] = $this->prepare();
 
         $response = $this->makeRequest($user, $conversation, [

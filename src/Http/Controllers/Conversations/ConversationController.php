@@ -3,6 +3,7 @@
 namespace OwowAgency\Gossip\Http\Controllers\Conversations;
 
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\QueryBuilder;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
 class ConversationController extends Controller
@@ -16,9 +17,15 @@ class ConversationController extends Controller
     {
         $this->authorize('viewAny', [config('gossip.models.conversation')]);
 
-        $conversations = config('gossip.models.conversation')::withDefaultRelations(3)
-            ->httpQuery()
-            ->paginate();
+        $conversations = QueryBuilder::for(config('gossip.models.conversation'))
+            ->allowedFilters([
+                'name',
+            ])
+            ->defaultSort('-created_at')
+            ->allowedSorts('created_at', 'updated_at')
+            ->withDefaultRelations(3)
+            ->paginate()
+            ->appends(request()->query());
 
         return $this->createPaginatedResponse(
             $conversations,

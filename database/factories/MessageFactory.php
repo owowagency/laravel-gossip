@@ -27,6 +27,8 @@ class MessageFactory extends Factory
             'conversation_id' => config('gossip.models.conversation')::factory(),
             'user_id' => config('gossip.models.user')::factory(),
             'body' => $this->faker->text,
+            'created_at' => $now = now(),
+            'updated_at' => $now,
         ];
     }
 }
