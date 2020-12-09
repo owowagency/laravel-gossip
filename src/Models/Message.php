@@ -45,7 +45,7 @@ class Message extends Model
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('gossip.user_model'));
+        return $this->belongsTo(config('gossip.models.user'));
     }
 
     /**
@@ -55,7 +55,7 @@ class Message extends Model
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(config('gossip.user_model'))
+        return $this->belongsToMany(config('gossip.models.user'))
             ->withTimestamps();
     }
 
@@ -66,7 +66,7 @@ class Message extends Model
      */
     public function conversation(): BelongsTo
     {
-        return $this->belongsTo(Conversation::class);
+        return $this->belongsTo(config('gossip.models.conversation'));
     }
 
     /**

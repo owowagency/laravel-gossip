@@ -21,6 +21,14 @@ class Controller extends BaseController
     protected string $modelClass;
 
     /**
+     * Controller constructor.
+     */
+    public function __construct()
+    {
+        $this->setResourceModelClass();
+    }
+
+    /**
      * Create a paginated JSON response from the given paginator and resource class.
      *
      * @param  \Illuminate\Pagination\AbstractPaginator  $paginator
@@ -55,17 +63,29 @@ class Controller extends BaseController
     }
 
     /**
-     * Get the user model based on the user id parameter.
+     * Sets the resource model class.
      *
-     * @return \App\Models\User
+     * @return void
+     *
+     * @throws \Exception
      */
-    protected function getUserFromRoute(): Model
+    public function setResourceModelClass()
     {
-        $userId = request()->route()->parameter('user');
+        $request = request();
 
-        $modelClass = config('gossip.user_model');
+        // When no request is present, like in terminal, skip.
+        if (! $request || ! $request->route()) {
+            return;
+        }
 
-        return $modelClass::findOrFail($userId);
+        $parameters = array_keys($request->route()->parameters());
+        $models = config('gossip.models');
+
+        foreach ($parameters as $parameter) {
+            if (array_key_exists($parameter, $models)) {
+                $this->modelClass = $models[$parameter];
+            }
+        }
     }
 
     /**

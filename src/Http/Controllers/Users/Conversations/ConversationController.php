@@ -3,19 +3,10 @@
 namespace OwowAgency\Gossip\Http\Controllers\Users\Conversations;
 
 use Illuminate\Http\JsonResponse;
-use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
 class ConversationController extends Controller
 {
-    /**
-     * ConversationController constructor.
-     */
-    public function __construct()
-    {
-        $this->modelClass = config('gossip.user_model');
-    }
-
     /**
      * Returns models instances used for the index action.
      *
@@ -26,9 +17,9 @@ class ConversationController extends Controller
     {
         $user = $this->getModel($userId);
 
-        $this->authorize('viewConversationsOf', [Conversation::class, $user]);
+        $this->authorize('viewConversationsOf', [config('gossip.models.conversation'), $user]);
 
-        $conversations = Conversation::withDefaultRelations(3)
+        $conversations = config('gossip.models.conversation')::withDefaultRelations(3)
             ->ofUser($user)
             ->httpQuery()
             ->paginate();

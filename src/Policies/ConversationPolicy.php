@@ -2,7 +2,6 @@
 
 namespace OwowAgency\Gossip\Policies;
 
-use OwowAgency\Gossip\Models\Conversation;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 
@@ -41,7 +40,7 @@ class ConversationPolicy
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return bool
      */
-    public function view(HasConversationContract $user, Conversation $conversation): bool
+    public function view(HasConversationContract $user, $conversation): bool
     {
         return $conversation->hasUser($user);
     }
@@ -76,7 +75,7 @@ class ConversationPolicy
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return bool
      */
-    public function update(HasConversationContract $user, Conversation $conversation): bool
+    public function update(HasConversationContract $user, $conversation): bool
     {
         // TODO let creator delete conversation.
         return false;
@@ -89,7 +88,7 @@ class ConversationPolicy
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return bool
      */
-    public function delete(HasConversationContract $user, Conversation $conversation): bool
+    public function delete(HasConversationContract $user, $conversation): bool
     {
         // TODO let creator delete conversation.
         return false;
