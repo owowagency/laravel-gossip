@@ -6,6 +6,7 @@ use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class IndexTest extends TestCase
 {
@@ -13,10 +14,21 @@ class IndexTest extends TestCase
     public function user_can_index_conversations(): void
     {
         [$user] = $this->prepare();
+        $user->assignRole(Role::ADMIN);
 
         $response = $this->makeRequest($user);
 
         $this->assertResponse($response);
+    }
+
+    /** @test */
+    public function user_cant_index_conversations(): void
+    {
+        [$user] = $this->prepare();
+
+        $response = $this->makeRequest($user);
+
+        $this->assertResponse($response, 403);
     }
 
     /**

@@ -6,9 +6,23 @@ use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class ShowTest extends TestCase
 {
+    /** @test */
+    public function admin_can_show_conversations(): void
+    {
+        [$user, $conversation] = $this->prepare();
+
+        $admin = User::factory()->create();
+        $admin->assignRole(Role::ADMIN);
+
+        $response = $this->makeRequest($admin, $conversation);
+
+        $this->assertResponse($response);
+    }
+
     /** @test */
     public function user_can_show_conversations(): void
     {
@@ -17,6 +31,18 @@ class ShowTest extends TestCase
         $response = $this->makeRequest($user, $conversation);
 
         $this->assertResponse($response);
+    }
+
+    /** @test */
+    public function user_cant_show_conversations(): void
+    {
+        [$user, $conversation] = $this->prepare();
+
+        $other = User::factory()->create();
+
+        $response = $this->makeRequest($other, $conversation);
+
+        $this->assertResponse($response, 403);
     }
 
     /**

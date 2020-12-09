@@ -6,10 +6,12 @@ use OwowAgency\Gossip\ServiceProvider;
 use OwowAgency\Snapshots\MatchesSnapshots;
 use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use Spatie\Permission\PermissionServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use OwowAgency\Gossip\Tests\Support\TestServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithTime;
 use OwowAgency\LaravelResources\LaravelResourcesServiceProvider;
+use OwowAgency\Gossip\Tests\Support\Database\Seeders\PermissionSeeder;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -26,8 +28,16 @@ abstract class TestCase extends BaseTestCase
 
         config(['gossip.user_model' => User::class]);
 
+        // Publish the vendor files. This will register the migrations of all
+        // dependencies.
+        $this->artisan('vendor:publish', [
+            '--all' => true,
+        ]);
+
         // Refresh the database.
         $this->artisan('migrate:fresh');
+
+        $this->seed(PermissionSeeder::class);
     }
 
     /**
@@ -46,6 +56,7 @@ abstract class TestCase extends BaseTestCase
             TestServiceProvider::class,
             ServiceProvider::class,
             LaravelResourcesServiceProvider::class,
+            PermissionServiceProvider::class,
         ];
     }
 
