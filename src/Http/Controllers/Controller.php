@@ -5,11 +5,20 @@ namespace OwowAgency\Gossip\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\AbstractPaginator;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Controller extends \Illuminate\Routing\Controller
+class Controller extends BaseController
 {
     use AuthorizesRequests;
+
+    /**
+     * The model class.
+     *
+     * @var string
+     */
+    protected string $modelClass;
 
     /**
      * Create a paginated JSON response from the given paginator and resource class.
@@ -57,5 +66,33 @@ class Controller extends \Illuminate\Routing\Controller
         $modelClass = config('gossip.user_model');
 
         return $modelClass::findOrFail($userId);
+    }
+
+    /**
+     * Tries to retrieve the model.
+     *
+     * @param  mixed  $value
+     * @param  string|null  $modelClass
+     * @return \Illuminate\Database\Eloquent\Model
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     */
+    public function getModel($value, string $modelClass = null): Model
+    {
+        if ($value instanceof Model) {
+            return $value;
+        }
+
+        $modelClass = $modelClass ?? $this->modelClass;
+
+        $instance = new $modelClass;
+
+        $model = $instance->resolveRouteBinding($value);
+
+        if (is_null($model)) {
+            throw new ModelNotFoundException($instance, $value);
+        }
+
+        return $model;
     }
 }

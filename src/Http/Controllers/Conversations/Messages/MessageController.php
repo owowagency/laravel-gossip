@@ -11,6 +11,14 @@ use OwowAgency\Gossip\Http\Controllers\Controller;
 class MessageController extends Controller
 {
     /**
+     * ConversationController constructor.
+     */
+    public function __construct()
+    {
+        $this->modelClass = Conversation::class;
+    }
+
+    /**
      * Paginate the messages of the given conversation.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -19,7 +27,7 @@ class MessageController extends Controller
      */
     public function __invoke(Request $request, $conversationId): JsonResponse
     {
-        $conversation = Conversation::findOrFail($conversationId);
+        $conversation = $this->getModel($conversationId);
 
         $this->authorize('view', $conversation);
 
