@@ -4,13 +4,12 @@ namespace OwowAgency\Gossip\Models;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Factories\MessageFactory;
 use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use OwowAgency\Gossip\Managers\MessageManager;
-use OwowAgency\Gossip\Support\Collection\MessageCollection;
 use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 use OwowAgency\Gossip\Support\Exceptions\RelationNotLoadedException;
 
