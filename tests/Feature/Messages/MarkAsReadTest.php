@@ -6,9 +6,25 @@ use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class MarkAsReadTest extends TestCase
 {
+    /** @test */
+    public function admin_can_mark_message_as_read(): void
+    {
+        [$user, $message] = $this->prepare();
+
+        $admin = User::factory()->create();
+        $admin->assignRole(Role::ADMIN);
+
+        $response = $this->makeRequest($admin, $message);
+
+        $this->assertResponse($response);
+
+        $this->assertDatabase($admin, $message);
+    }
+
     /** @test */
     public function user_can_mark_message_as_read(): void
     {
