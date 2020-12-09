@@ -11,7 +11,7 @@ use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 class IndexTest extends TestCase
 {
     /** @test */
-    public function user_can_index_conversations(): void
+    public function admin_can_index_conversations(): void
     {
         [$user] = $this->prepare();
         $user->assignRole(Role::ADMIN);
