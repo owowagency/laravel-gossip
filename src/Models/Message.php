@@ -76,7 +76,7 @@ class Message extends Model
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeOfConversation($query, $conversation)
+    public function scopeOfConversation($query, Model $conversation)
     {
         return $query->where('conversation_id', $conversation->getKey());
     }
