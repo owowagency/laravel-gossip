@@ -4,6 +4,7 @@ namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
 class MessageController extends Controller
@@ -26,6 +27,11 @@ class MessageController extends Controller
             ->httpQuery()
             ->latest()
             ->paginate();
+
+        MessageManager::handleMessageMarking(
+            $messages->getCollection(),
+            $request->get('mark_messages_as_read', false)
+        );
 
         return $this->createPaginatedResponse(
             $messages,
