@@ -8,6 +8,7 @@ use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 use Spatie\Permission\PermissionServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Spatie\QueryBuilder\QueryBuilderServiceProvider;
 use OwowAgency\Gossip\Tests\Support\TestServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithTime;
 use OwowAgency\LaravelResources\LaravelResourcesServiceProvider;
@@ -56,6 +57,7 @@ abstract class TestCase extends BaseTestCase
             TestServiceProvider::class,
             ServiceProvider::class,
             LaravelResourcesServiceProvider::class,
+            QueryBuilderServiceProvider::class,
             PermissionServiceProvider::class,
         ];
     }

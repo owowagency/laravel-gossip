@@ -4,6 +4,8 @@ namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
@@ -22,11 +24,18 @@ class MessageController extends Controller
 
         $this->authorize('view', $conversation);
 
-        $messages = config('gossip.models.message')::with('user', 'users')
+        $messages = QueryBuilder::for(config('gossip.models.message'))
+            ->allowedFilters([
+                'body',
+                AllowedFilter::scope('created_after'),
+                AllowedFilter::scope('updated_after'),
+            ])
+            ->defaultSort('-created_at')
+            ->allowedSorts('created_at', 'updated_at')
+            ->with('user', 'users')
             ->ofConversation($conversation)
-            ->httpQuery()
-            ->latest()
-            ->paginate();
+            ->paginate()
+            ->appends($request->query());
 
         MessageManager::handleMessageMarking(
             $messages->getCollection(),

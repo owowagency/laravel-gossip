@@ -4,16 +4,16 @@ namespace OwowAgency\Gossip\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use OwowAgency\Gossip\Factories\ConversationFactory;
+use OwowAgency\Gossip\Models\Concerns\HasDateScopes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use OwowAgency\Gossip\Models\Concerns\HasDefaultRelations;
 
 class Conversation extends Model
 {
-    use AppliesHttpQuery, HasDefaultRelations, HasFactory;
+    use HasDateScopes, HasDefaultRelations, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -22,19 +22,6 @@ class Conversation extends Model
      */
     protected $fillable = [
         'name',
-    ];
-
-    /**
-     * Http queryable rules.
-     *
-     * @var array
-     */
-    protected $httpQueryable = [
-        'columns' => [
-            'name',
-            'created_at',
-            'updated_at',
-        ],
     ];
     
     /**
