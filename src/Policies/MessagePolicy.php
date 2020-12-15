@@ -2,7 +2,6 @@
 
 namespace OwowAgency\Gossip\Policies;
 
-use OwowAgency\Gossip\Models\Message;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 
@@ -41,7 +40,7 @@ class MessagePolicy
      * @param  \OwowAgency\Gossip\Models\Message  $message
      * @return bool
      */
-    public function view(HasConversationContract $user, Message $message): bool
+    public function view(HasConversationContract $user, $message): bool
     {
         return $message->conversation->hasUser($user);
     }
@@ -64,7 +63,7 @@ class MessagePolicy
      * @param  \OwowAgency\Gossip\Models\Message  $message
      * @return bool
      */
-    public function update(HasConversationContract $user, Message $message): bool
+    public function update(HasConversationContract $user, $message): bool
     {
         return $user->id === $message->user_id;
     }
@@ -76,7 +75,7 @@ class MessagePolicy
      * @param  \OwowAgency\Gossip\Models\Message  $message
      * @return bool
      */
-    public function delete(HasConversationContract $user, Message $message): bool
+    public function delete(HasConversationContract $user, $message): bool
     {
         return $user->id === $message->user_id;
     }

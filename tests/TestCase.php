@@ -26,7 +26,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        config(['gossip.user_model' => User::class]);
+        config(['gossip.models.user' => User::class]);
 
         // Publish the vendor files. This will register the migrations of all
         // dependencies.

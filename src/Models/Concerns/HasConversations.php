@@ -2,8 +2,6 @@
 
 namespace OwowAgency\Gossip\Models\Concerns;
 
-use OwowAgency\Gossip\Models\Message;
-use OwowAgency\Gossip\Models\Conversation;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -17,7 +15,7 @@ trait HasConversations
      */
     public function conversations(): BelongsToMany
     {
-        return $this->belongsToMany(Conversation::class)
+        return $this->belongsToMany(config('gossip.models.conversation'))
             ->withTimestamps();
     }
 
@@ -28,7 +26,7 @@ trait HasConversations
      */
     public function messages(): HasMany
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(config('gossip.models.message'));
     }
 
     /**
@@ -38,7 +36,7 @@ trait HasConversations
      */
     public function readMessages(): BelongsToMany
     {
-        return $this->belongsToMany(Message::class)
+        return $this->belongsToMany(config('gossip.models.message'))
             ->withTimestamps();
     }
 }

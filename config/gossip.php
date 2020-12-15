@@ -2,7 +2,11 @@
 
 return [
 
-    'user_model' => \App\Models\User::class,
+    'models' => [
+        'user' => \App\Models\User::class,
+        'conversation' => \OwowAgency\Gossip\Models\Conversation::class,
+        'message' => \OwowAgency\Gossip\Models\Message::class,
+    ],
 
     'resources' => [
 

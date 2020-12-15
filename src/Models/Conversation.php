@@ -44,7 +44,7 @@ class Conversation extends Model
      */
     public function messages(): HasMany
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(config('gossip.models.message'));
     }
 
     /**
@@ -54,7 +54,7 @@ class Conversation extends Model
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(config('gossip.user_model'));
+        return $this->belongsToMany(config('gossip.models.user'));
     }
 
     /**

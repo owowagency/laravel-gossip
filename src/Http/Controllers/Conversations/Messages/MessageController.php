@@ -4,21 +4,11 @@ namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use OwowAgency\Gossip\Models\Message;
-use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
 class MessageController extends Controller
 {
-    /**
-     * ConversationController constructor.
-     */
-    public function __construct()
-    {
-        $this->modelClass = Conversation::class;
-    }
-
     /**
      * Paginate the messages of the given conversation.
      *
@@ -32,7 +22,7 @@ class MessageController extends Controller
 
         $this->authorize('view', $conversation);
 
-        $messages = Message::with('user', 'users')
+        $messages = config('gossip.models.message')::with('user', 'users')
             ->ofConversation($conversation)
             ->httpQuery()
             ->latest()

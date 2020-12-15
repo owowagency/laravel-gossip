@@ -4,19 +4,10 @@ namespace OwowAgency\Gossip\Http\Controllers\Messages;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
-use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
 class MarkAsReadController extends Controller
 {
-    /**
-     * MarkAsReadController constructor.
-     */
-    public function __construct()
-    {
-        $this->modelClass = Message::class;
-    }
-
     /**
      * Mark the message as read.
      *
