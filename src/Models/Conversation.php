@@ -3,6 +3,7 @@
 namespace OwowAgency\Gossip\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use OwowAgency\AppliesHttpQuery\AppliesHttpQuery;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use OwowAgency\Gossip\Factories\ConversationFactory;
@@ -60,14 +61,14 @@ class Conversation extends Model
      * Scope a query to only include conversations of the given user.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Database\Eloquent\Model  $user
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeOfUser($query, $user)
+    public function scopeOfUser(Builder $query, Model $user): Builder
     {
         return $query->whereHas(
             'users',
-            fn($query) => $query->where('users.id', $user->id),
+            fn($query) => $query->where('users.id', $user->getKey()),
         );
     }
 

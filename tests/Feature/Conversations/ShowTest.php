@@ -75,7 +75,7 @@ class ShowTest extends TestCase
     private function makeRequest(User $user, Conversation $conversation): TestResponse
     {
         return $this->actingAs($user)
-            ->json('GET', 'conversations/' . $conversation->id);
+            ->json('GET', '/conversations/' . $conversation->id);
     }
 
     /**

@@ -9,6 +9,14 @@ use OwowAgency\Gossip\Http\Controllers\Controller;
 class ConversationController extends Controller
 {
     /**
+     * ConversationController constructor.
+     */
+    public function __construct()
+    {
+        $this->modelClass = config('gossip.user_model');
+    }
+
+    /**
      * Returns models instances used for the index action.
      *
      * @param  int|string  $userId
@@ -16,11 +24,11 @@ class ConversationController extends Controller
      */
     public function index($userId): JsonResponse
     {
-        $user = $this->getUserFromRoute();
+        $user = $this->getModel($userId);
 
         $this->authorize('viewConversationsOf', [Conversation::class, $user]);
 
-        $conversations = Conversation::withRelations(3)
+        $conversations = Conversation::withDefaultRelations(3)
             ->ofUser($user)
             ->httpQuery()
             ->paginate();

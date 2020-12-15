@@ -74,7 +74,7 @@ class IndexTest extends TestCase
      */
     private function makeRequest(User $user, User $other = null): TestResponse
     {
-        $view = $other ?: $user;
+        $view = $other ?? $user;
 
         return $this->actingAs($user)
             ->json('GET', "/users/{$view->id}/conversations");

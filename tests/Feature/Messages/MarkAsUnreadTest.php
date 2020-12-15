@@ -62,7 +62,7 @@ class MarkAsUnreadTest extends TestCase
     private function makeRequest(User $user, Message $message): TestResponse
     {
         return $this->actingAs($user)
-            ->json('delete', 'messages/' . $message->id . '/unread');
+            ->json('delete', '/messages/' . $message->id . '/unread');
     }
 
     /**

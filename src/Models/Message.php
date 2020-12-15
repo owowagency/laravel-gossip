@@ -76,12 +76,9 @@ class Message extends Model
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeOfConversation($query, Conversation $conversation)
+    public function scopeOfConversation($query, Model $conversation)
     {
-        return $query->whereHas(
-            'conversation',
-            fn($query) => $query->where('conversations.id', $conversation->id),
-        );
+        return $query->where('conversation_id', $conversation->getKey());
     }
 
     /**
@@ -165,20 +162,6 @@ class Message extends Model
      */
     public function newCollection(array $models = [])
     {
-        $collection = new MessageCollection($models);
-
-        // If there is not authenticated user we can return the collection
-        // immediately. This because we can't mark the messages as read.
-        // Usually, this will only be the case while performing unit tests.
-        if (Auth::guest()) {
-            return $collection;
-        }
-
-        $markAsRead = filter_var(
-            request()->get('mark_messages_as_read', false),
-            FILTER_VALIDATE_BOOLEAN
-        );
-
-        return $collection->markAsRead(Auth::user(), $markAsRead);
+        return new MessageCollection($models);
     }
 }

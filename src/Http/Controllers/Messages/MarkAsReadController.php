@@ -10,6 +10,14 @@ use OwowAgency\Gossip\Http\Controllers\Controller;
 class MarkAsReadController extends Controller
 {
     /**
+     * MarkAsReadController constructor.
+     */
+    public function __construct()
+    {
+        $this->modelClass = Message::class;
+    }
+
+    /**
      * Mark the message as read.
      *
      * @param  int  $messageId
@@ -41,7 +49,7 @@ class MarkAsReadController extends Controller
      */
     protected function handleMarkingAsRead(int $messageId, string $method): JsonResponse
     {
-        $message = Message::findOrFail($messageId);
+        $message = $this->getModel($messageId);
 
         // If you may view the message you may also mark it as read, because
         // when viewing the message you mark it as read.

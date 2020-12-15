@@ -42,6 +42,8 @@ class IndexTest extends TestCase
             'mark_messages_as_read' => true,
         ]);
 
+        // The "current_user_read_message" attribute should be a timestamp. This
+        // is validated in the snapshot.
         $this->assertResponse($response);
     }
 

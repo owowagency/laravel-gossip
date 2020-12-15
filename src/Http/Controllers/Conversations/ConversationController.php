@@ -9,6 +9,14 @@ use OwowAgency\Gossip\Http\Controllers\Controller;
 class ConversationController extends Controller
 {
     /**
+     * ConversationController constructor.
+     */
+    public function __construct()
+    {
+        $this->modelClass = Conversation::class;
+    }
+
+    /**
      * Returns models instances used for the index action.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -17,7 +25,7 @@ class ConversationController extends Controller
     {
         $this->authorize('viewAny', [Conversation::class]);
 
-        $conversations = Conversation::withRelations(3)
+        $conversations = Conversation::withDefaultRelations(3)
             ->httpQuery()
             ->paginate();
 
@@ -35,7 +43,7 @@ class ConversationController extends Controller
      */
     public function show($conversationId): JsonResponse
     {
-        $conversation = Conversation::findOrFail($conversationId);
+        $conversation = $this->getModel($conversationId);
 
         $this->authorize('view', $conversation);
 
