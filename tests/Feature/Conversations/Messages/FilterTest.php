@@ -13,7 +13,7 @@ class FilterTest extends TestCase
     /** @test */
     public function user_can_index_messages_after_creation_date(): void
     {
-        [$user, $oldMessage, $newMessage] = $this->prepare();
+        [$user, $oldMessage] = $this->prepare();
 
         $response = $this->makeRequest($user, $oldMessage->conversation, [
             'filter' => [
@@ -21,13 +21,13 @@ class FilterTest extends TestCase
             ],
         ]);
 
-        $this->assertResponse($response, $newMessage, $oldMessage);
+        $this->assertResponse($response);
     }
 
     /** @test */
     public function user_can_index_messages_after_updating_date(): void
     {
-        [$user, $oldMessage, $newMessage] = $this->prepare('updated_at');
+        [$user, $oldMessage] = $this->prepare('updated_at');
 
         $response = $this->makeRequest($user, $oldMessage->conversation, [
             'filter' => [
@@ -35,7 +35,7 @@ class FilterTest extends TestCase
             ],
         ]);
 
-        $this->assertResponse($response, $newMessage, $oldMessage);
+        $this->assertResponse($response);
     }
 
     /**
@@ -63,7 +63,7 @@ class FilterTest extends TestCase
             $field => now()->addWeek(),
         ]);
 
-        return [$user, $oldMessage, $newMessage, $conversation];
+        return [$user, $oldMessage];
     }
 
     /**
@@ -89,35 +89,17 @@ class FilterTest extends TestCase
      * Asserts a response.
      *
      * @param  \Illuminate\Testing\TestResponse  $response
-     * @param  \OwowAgency\Gossip\Models\Message  $assert
-     * @param  \OwowAgency\Gossip\Models\Message  $missing
      * @param  int  $status
      * @return void
      */
     private function assertResponse(
         TestResponse $response,
-        Message $assert,
-        Message $missing,
         int $status = 200
     ): void {
         $response->assertStatus($status);
 
-        if ($status !== 200) {
-            return;
+        if ($status === 200) {
+            $this->assertJsonStructureSnapshot($response);
         }
-
-        $this->assertJsonStructureSnapshot($response);
-
-        $response->assertJson([
-            'data' => [
-                ['id' => $assert->id],
-            ]
-        ]);
-
-        $response->assertJsonMissing([
-            'data' => [
-                ['id' => $missing->id],
-            ]
-        ]);
     }
 }
