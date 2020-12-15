@@ -4,12 +4,12 @@ namespace OwowAgency\Gossip\Models;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
-use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Factories\MessageFactory;
 use OwowAgency\Gossip\Models\Concerns\HasDateScopes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use OwowAgency\Gossip\Support\Collection\MessageCollection;
 use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 use OwowAgency\Gossip\Support\Exceptions\RelationNotLoadedException;
 
@@ -64,7 +64,7 @@ class Message extends Model
      * @param  \OwowAgency\Gossip\Models\Conversation  $conversation
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeOfConversation($query, $conversation)
+    public function scopeOfConversation($query, Model $conversation)
     {
         return $query->where('conversation_id', $conversation->getKey());
     }
@@ -150,6 +150,6 @@ class Message extends Model
      */
     public function newCollection(array $models = [])
     {
-        return MessageManager::createCollection($models);
+        return new MessageCollection($models);
     }
 }

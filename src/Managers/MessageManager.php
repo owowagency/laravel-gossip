@@ -4,33 +4,26 @@ namespace OwowAgency\Gossip\Managers;
 
 use Illuminate\Support\Facades\Auth;
 use OwowAgency\Gossip\Support\Collection\MessageCollection;
+use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 
 class MessageManager
 {
     /**
-     * Create a new Eloquent Collection instance of messages.
+     * Mark all the messages in the given collection as read when the
+     * $markAsRead variable is equal to true.
      *
-     * @param  array  $models
+     * @param  \OwowAgency\Gossip\Support\Collection\MessageCollection  $collection
+     * @param  boolean  $markAsRead
+     * @param  \OwowAgency\Gossip\Models\Contracts\HasConversationContract|null  $user
      * @return \OwowAgency\Gossip\Support\Collection\MessageCollection
      */
-    public static function createCollection(array $models): MessageCollection
-    {
-        $collection = new MessageCollection($models);
-
-        // If there is not authenticated user we can return the collection
-        // immediately. This because we can't mark the messages as read.
-        // Usually, this will only be the case while performing unit tests.
-        if (Auth::guest()) {
-            return $collection;
-        }
-
-        $markAsRead = filter_var(
-            request()->get('mark_messages_as_read', false),
-            FILTER_VALIDATE_BOOLEAN
-        );
-
+    public static function handleMessageMarking(
+        MessageCollection $collection,
+        bool $markAsRead,
+        HasConversationContract $user = null
+    ): MessageCollection {
         if ($markAsRead) {
-            $collection->markAsRead(Auth::user());
+            $collection->markAsRead($user ?? Auth::user());
         }
 
         return $collection;
