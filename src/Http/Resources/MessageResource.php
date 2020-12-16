@@ -5,6 +5,7 @@ namespace OwowAgency\Gossip\Http\Resources;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Resources\Json\JsonResource;
+use OwowAgency\Gossip\Support\Enums\Alignment;
 
 class MessageResource extends JsonResource
 {
@@ -19,7 +20,9 @@ class MessageResource extends JsonResource
         return [
             'id' => $this->id,
             'conversation_id' => $this->conversation_id,
+            'user_id' => $this->user_id,
             'body' => $this->body,
+            'align' => $this->getAlignment(),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'current_user_read_message' => $this->getReadAtTimestamp(),
@@ -56,5 +59,21 @@ class MessageResource extends JsonResource
         }
 
         return $user->pivot->created_at;
+    }
+
+    /**
+     * Get the alignment of the message.
+     *
+     * @return string
+     */
+    private function getAlignment(): string
+    {
+        // If the current authenticated user is the creator of the message, then
+        // the alignment should be trailing (right).
+        if (Auth::check() && $this->user_id === Auth::user()->id) {
+            return Alignment::TRAILING;
+        }
+
+        return Alignment::LEADING;
     }
 }

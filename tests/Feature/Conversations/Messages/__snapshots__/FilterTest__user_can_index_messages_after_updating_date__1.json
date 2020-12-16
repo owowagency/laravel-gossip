@@ -4,21 +4,23 @@
         {
             "id": 2,
             "conversation_id": 1,
-            "body": "Consequatur dolor beatae ratione incidunt voluptate. Ducimus quidem in quam amet aut saepe. Iusto est doloremque facere quia labore optio nulla.",
-            "created_at": "2020-12-09T13:29:31.000000Z",
-            "updated_at": "2020-12-16T13:29:31.000000Z",
+            "user_id": 3,
+            "body": "Aut et quo eligendi animi at non ex libero. Fuga voluptas beatae earum omnis atque et dolorem. Ut qui modi nobis molestiae optio doloremque.",
+            "align": "leading",
+            "created_at": "2020-12-16T10:40:40.000000Z",
+            "updated_at": "2020-12-23T10:40:40.000000Z",
             "current_user_read_message": null,
             "user": {
                 "id": 3,
-                "created_at": "2020-12-09T13:29:31.000000Z",
-                "updated_at": "2020-12-09T13:29:31.000000Z"
+                "created_at": "2020-12-16T10:40:40.000000Z",
+                "updated_at": "2020-12-16T10:40:40.000000Z"
             }
         }
     ],
-    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-09%2013%3A29%3A31&page=1",
+    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2010%3A40%3A40&page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-09%2013%3A29%3A31&page=1",
+    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2010%3A40%3A40&page=1",
     "links": [
         {
             "url": null,
@@ -26,7 +28,7 @@
             "active": false
         },
         {
-            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-09%2013%3A29%3A31&page=1",
+            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2010%3A40%3A40&page=1",
             "label": 1,
             "active": true
         },
