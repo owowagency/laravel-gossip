@@ -82,7 +82,7 @@ class Conversation extends Model
     {
         return [
             'users',
-            'messages' => fn($query) => $query->with('user', 'users')
+            'messages' => fn($query) => $query->with('users')
                 ->latest()
                 ->take($messageCount),
         ];

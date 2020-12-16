@@ -1,15 +1,13 @@
 <?php
 
-namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
+namespace OwowAgency\Gossip\Http\Controllers\Conversations\Users;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
-use Spatie\QueryBuilder\AllowedFilter;
-use OwowAgency\Gossip\Managers\MessageManager;
 use OwowAgency\Gossip\Http\Controllers\Controller;
 
-class MessageController extends Controller
+class UserController extends Controller
 {
     /**
      * Paginate the messages of the given conversation.
@@ -24,27 +22,18 @@ class MessageController extends Controller
 
         $this->authorize('view', $conversation);
 
-        $messages = QueryBuilder::for(config('gossip.models.message'))
+        $users = QueryBuilder::for(config('gossip.models.user'))
             ->allowedFilters([
-                'body',
-                AllowedFilter::scope('created_after'),
-                AllowedFilter::scope('updated_after'),
+                'name', 'first_name', 'last_name', 'full_name',
             ])
             ->defaultSort('-created_at')
-            ->allowedSorts('created_at', 'updated_at')
-            ->with('users')
-            ->ofConversation($conversation)
+            ->ofConversation($conversation->id)
             ->paginate()
             ->appends($request->query());
 
-        MessageManager::handleMessageMarking(
-            $messages->getCollection(),
-            $request->get('mark_messages_as_read', false)
-        );
-
         return $this->createPaginatedResponse(
-            $messages,
-            config('gossip.resources.message'),
+            $users,
+            config('gossip.resources.user'),
         );
     }
 }
