@@ -4,8 +4,8 @@ namespace OwowAgency\Gossip\Http\Resources;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Resources\Json\JsonResource;
 use OwowAgency\Gossip\Support\Enums\Alignment;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class MessageResource extends JsonResource
 {
