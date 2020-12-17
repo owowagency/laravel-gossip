@@ -4,197 +4,122 @@
         {
             "id": 1,
             "conversation_id": 1,
-            "body": "Maxime non aperiam natus suscipit fugiat. Assumenda quaerat et soluta est labore ut maxime. Illum repudiandae officia quidem sint nesciunt molestias. Quia quam error id tempora porro.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Sint nobis eum dolore quasi harum. Totam quo commodi velit vitae perspiciatis qui molestias. Quis nihil corporis dolore nisi dolores.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 2,
             "conversation_id": 1,
-            "body": "At quas mollitia necessitatibus nemo ut. Est voluptatem vitae fugiat eveniet. Porro occaecati qui a rem accusamus numquam. Sequi impedit dolorem qui ea velit non sit.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Accusamus accusantium accusamus consequuntur illum soluta omnis. Iure amet enim est officia rerum. In non expedita est amet eveniet.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 3,
             "conversation_id": 1,
-            "body": "Provident qui facilis dolores culpa delectus ut. Vel aperiam eaque facilis voluptatem in ipsa eaque est. Rerum praesentium adipisci quam.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Quam dolorum magnam quaerat assumenda itaque delectus dignissimos. Vel architecto et sint dolores aliquid illo. Consequuntur incidunt aut quo officiis.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 4,
             "conversation_id": 1,
-            "body": "Aliquam qui nostrum velit fugiat. Excepturi aut tempore nihil minima nihil aut asperiores. Pariatur eos est sed qui. Consectetur deserunt doloremque ipsum praesentium placeat enim ut.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Fugiat asperiores excepturi et soluta. Animi eos et officia perspiciatis quo aperiam beatae nemo.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 5,
             "conversation_id": 1,
-            "body": "Aut similique dolorem veritatis sit dolores laboriosam rem. Sint est ipsam quia animi exercitationem omnis occaecati. Quia sit et et ad sed perferendis. Optio est voluptatum quia aperiam omnis.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Magni voluptas iure perferendis sed itaque unde facilis. Et aut id blanditiis esse aut labore culpa.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 6,
             "conversation_id": 1,
-            "body": "Qui sapiente qui voluptas est incidunt ipsa tempore quia. Voluptate tempora ipsa tenetur quis eligendi. Fugiat aperiam autem ducimus. Possimus earum quod illum rerum natus hic.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Voluptates debitis rerum voluptatem ea. Dicta dignissimos earum veritatis voluptatem. Dolores dolor similique et rerum assumenda. Dolor aut voluptatem quis quo quas.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 7,
             "conversation_id": 1,
-            "body": "Et nisi officiis voluptatem quis optio. Rem inventore non temporibus dolores voluptatem.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Qui sit laborum vel est ut iste. Facilis aut eveniet eaque atque tempora perferendis accusamus. Velit optio labore velit quisquam. Dolorem et libero deleniti facere libero dolor et.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 8,
             "conversation_id": 1,
-            "body": "Blanditiis asperiores nisi nihil suscipit natus incidunt. Vel et omnis expedita optio fugiat molestias. Consequatur et non eveniet dolor commodi. Velit aperiam at at aperiam quo atque.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Vel ea rem qui enim perferendis aut aut. Minus qui nihil quia quas. Est assumenda nulla earum reprehenderit laborum praesentium.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 9,
             "conversation_id": 1,
-            "body": "Quasi quia accusantium ad vel aut cupiditate. Fuga sequi sunt libero et et nisi. Dolore a omnis eum non nihil. Nesciunt quod alias qui nam et. In hic earum in soluta ad omnis nam rerum.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Similique laudantium placeat vel sit enim corporis fugit beatae. Debitis sint facere corporis quis. Praesentium blanditiis ex est non. Ipsa quaerat neque nemo veniam quod maxime quis.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 10,
             "conversation_id": 1,
-            "body": "Velit sunt voluptatem tempore et. Quas deleniti laboriosam quia eum. Nobis nulla reiciendis dolorem. Nobis ea voluptates atque occaecati et neque.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Ea consectetur est aliquid facilis porro sint. Autem similique suscipit aut sint esse eligendi. Vitae eum et eaque voluptas et atque totam.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 11,
             "conversation_id": 1,
-            "body": "Minus quia sit consequatur in ut maiores sint. Dolorum sed non natus et. Maxime saepe doloribus quia sint asperiores assumenda dolor repudiandae. Non rem culpa deserunt id.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Eaque incidunt maiores maxime. Accusamus eveniet ut ut reprehenderit. Sit accusamus minima dolores qui magni.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 12,
             "conversation_id": 1,
-            "body": "Reiciendis accusantium saepe rerum magni consequatur sed non. Quam nesciunt doloremque nam delectus in deleniti. Minima molestias quaerat magnam perferendis mollitia quibusdam sit.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Neque aut recusandae dolor est nisi. Ab quaerat ullam deserunt cupiditate laboriosam enim alias ut. Ea nam quaerat sunt esse unde.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 13,
             "conversation_id": 1,
-            "body": "Sed accusamus laudantium quo vel. Vel quia quia quibusdam praesentium quisquam labore ab eius. Officia tenetur aut sint. Adipisci et repellendus nihil a.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Eos ut impedit exercitationem minima. Quae omnis corporis est incidunt quibusdam. Sunt aut vero odit omnis. Similique quod eaque sit iure.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 14,
             "conversation_id": 1,
-            "body": "Ea deleniti nulla tempora doloribus veniam. Quas repellendus eveniet commodi deleniti. Recusandae iure eos quos.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Dolor omnis culpa nostrum vero numquam dicta necessitatibus. Natus quia ut consequuntur cupiditate dicta. Et ipsam sunt necessitatibus natus molestiae et.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 15,
             "conversation_id": 1,
-            "body": "Voluptatem qui expedita aut nihil possimus eum. Dolores nam voluptatem eaque suscipit. Expedita dolor voluptatem nulla et unde. Qui molestias fugiat magnam magni temporibus ad.",
-            "created_at": "2020-12-08T14:29:09.000000Z",
-            "updated_at": "2020-12-08T14:29:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 1,
-                "created_at": "2020-12-08T14:29:09.000000Z",
-                "updated_at": "2020-12-08T14:29:09.000000Z"
-            }
+            "body": "Nam et quia et quod. Eligendi dolorum quia eveniet quod ea reiciendis perferendis. Rerum praesentium suscipit rerum est deserunt velit sunt.",
+            "created_at": "2020-12-16T11:09:21.000000Z",
+            "updated_at": "2020-12-16T11:09:21.000000Z",
+            "current_user_read_message": null
         }
     ],
     "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?page=1",

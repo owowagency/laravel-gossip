@@ -3,14 +3,14 @@
     "data": [
         {
             "id": 1,
-            "name": "Peggie Gibson",
-            "created_at": "2020-12-09T09:54:48.000000Z",
-            "updated_at": "2020-12-09T09:54:48.000000Z",
+            "name": "Dr. Albin Olson DVM",
+            "created_at": "2020-12-16T11:09:20.000000Z",
+            "updated_at": "2020-12-16T11:09:20.000000Z",
             "users": [
                 {
                     "id": 2,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 1,
                         "user_id": 2
@@ -18,8 +18,8 @@
                 },
                 {
                     "id": 3,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 1,
                         "user_id": 3
@@ -30,41 +30,31 @@
                 {
                     "id": 1,
                     "conversation_id": 1,
-                    "body": "Vel vitae perspiciatis numquam ab numquam nihil pariatur. Illo voluptas quo atque. Ipsum at aperiam dolores provident iste ut repudiandae.",
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
-                    "current_user_read_message": null,
-                    "user": {
-                        "id": 4,
-                        "created_at": "2020-12-09T09:54:48.000000Z",
-                        "updated_at": "2020-12-09T09:54:48.000000Z"
-                    }
+                    "body": "Porro totam aliquam quia nihil saepe ipsa. Blanditiis cum placeat accusamus vero expedita. Quia qui est earum consequatur aut. Ex harum quo occaecati nihil odit aut harum.",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "current_user_read_message": null
                 },
                 {
                     "id": 2,
                     "conversation_id": 1,
-                    "body": "Quaerat officiis nam quisquam quod itaque. Eum eum sequi est in enim illo perspiciatis. Maiores illo similique sit veritatis ut amet. Vero magni perspiciatis doloribus voluptas.",
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
-                    "current_user_read_message": null,
-                    "user": {
-                        "id": 5,
-                        "created_at": "2020-12-09T09:54:48.000000Z",
-                        "updated_at": "2020-12-09T09:54:48.000000Z"
-                    }
+                    "body": "Repellat voluptates veniam sed facilis quia dolore quaerat. Amet nemo voluptatibus ut magnam. Molestiae tenetur debitis consequuntur et deserunt autem quas aliquam.",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "current_user_read_message": null
                 }
             ]
         },
         {
             "id": 2,
-            "name": "Rose Hartmann",
-            "created_at": "2020-12-09T09:54:48.000000Z",
-            "updated_at": "2020-12-09T09:54:48.000000Z",
+            "name": "Alden Botsford",
+            "created_at": "2020-12-16T11:09:20.000000Z",
+            "updated_at": "2020-12-16T11:09:20.000000Z",
             "users": [
                 {
                     "id": 6,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 2,
                         "user_id": 6
@@ -72,8 +62,8 @@
                 },
                 {
                     "id": 7,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 2,
                         "user_id": 7
@@ -84,28 +74,23 @@
                 {
                     "id": 3,
                     "conversation_id": 2,
-                    "body": "Magnam quae provident unde aut. Veniam voluptate nihil harum blanditiis ducimus eum. Quis sunt corporis autem et vero voluptatem.",
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
-                    "current_user_read_message": null,
-                    "user": {
-                        "id": 8,
-                        "created_at": "2020-12-09T09:54:48.000000Z",
-                        "updated_at": "2020-12-09T09:54:48.000000Z"
-                    }
+                    "body": "Ratione unde consectetur ipsam consequatur omnis quae. Non explicabo nobis magnam dolorem adipisci. Qui ut quos sequi occaecati.",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "current_user_read_message": null
                 }
             ]
         },
         {
             "id": 3,
-            "name": "Dr. Ollie Kunze V",
-            "created_at": "2020-12-09T09:54:48.000000Z",
-            "updated_at": "2020-12-09T09:54:48.000000Z",
+            "name": "Rick Lesch",
+            "created_at": "2020-12-16T11:09:20.000000Z",
+            "updated_at": "2020-12-16T11:09:20.000000Z",
             "users": [
                 {
                     "id": 10,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 3,
                         "user_id": 10
@@ -113,8 +98,8 @@
                 },
                 {
                     "id": 11,
-                    "created_at": "2020-12-09T09:54:48.000000Z",
-                    "updated_at": "2020-12-09T09:54:48.000000Z",
+                    "created_at": "2020-12-16T11:09:20.000000Z",
+                    "updated_at": "2020-12-16T11:09:20.000000Z",
                     "pivot": {
                         "conversation_id": 3,
                         "user_id": 11

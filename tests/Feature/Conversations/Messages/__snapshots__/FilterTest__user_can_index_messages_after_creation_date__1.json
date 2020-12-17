@@ -4,21 +4,16 @@
         {
             "id": 2,
             "conversation_id": 1,
-            "body": "Eaque id cumque nulla labore. Est aspernatur a aspernatur alias excepturi iusto cumque. Sit facilis a nobis optio blanditiis voluptatum.",
-            "created_at": "2020-12-16T13:28:09.000000Z",
-            "updated_at": "2020-12-09T13:28:09.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 3,
-                "created_at": "2020-12-09T13:28:09.000000Z",
-                "updated_at": "2020-12-09T13:28:09.000000Z"
-            }
+            "body": "Repudiandae non atque ea. Perspiciatis non rerum fugiat molestiae. Ut tempore quibusdam mollitia unde. Odio voluptate magnam totam.",
+            "created_at": "2020-12-23T11:09:20.000000Z",
+            "updated_at": "2020-12-16T11:09:20.000000Z",
+            "current_user_read_message": null
         }
     ],
-    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-09%2013%3A28%3A09&page=1",
+    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-16%2011%3A09%3A20&page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-09%2013%3A28%3A09&page=1",
+    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-16%2011%3A09%3A20&page=1",
     "links": [
         {
             "url": null,
@@ -26,7 +21,7 @@
             "active": false
         },
         {
-            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-09%2013%3A28%3A09&page=1",
+            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bcreated_after%5D=2020-12-16%2011%3A09%3A20&page=1",
             "label": 1,
             "active": true
         },

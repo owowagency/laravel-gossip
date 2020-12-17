@@ -4,6 +4,7 @@ namespace OwowAgency\Gossip\Tests;
 
 use OwowAgency\Gossip\ServiceProvider;
 use OwowAgency\Snapshots\MatchesSnapshots;
+use Illuminate\Http\Resources\Json\JsonResource;
 use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 use Spatie\Permission\PermissionServiceProvider;
@@ -27,12 +28,16 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        config(['gossip.models.user' => User::class]);
+        config([
+            'gossip.models.user' => User::class,
+            'gossip.resources.user' => JsonResource::class,
+        ]);
 
         // Publish the vendor files. This will register the migrations of all
         // dependencies.
         $this->artisan('vendor:publish', [
             '--all' => true,
+            '--force' => true,
         ]);
 
         // Refresh the database.

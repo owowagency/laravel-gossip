@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use OwowAgency\Gossip\Http\Controllers\Messages\MarkAsReadController;
+use OwowAgency\Gossip\Http\Controllers\Conversations\Users\UserController;
 use OwowAgency\Gossip\Http\Controllers\Conversations\ConversationController;
 use OwowAgency\Gossip\Http\Controllers\Conversations\Messages\MessageController;
 use OwowAgency\Gossip\Http\Controllers\Users\Conversations\ConversationController as UserConversationController;
@@ -15,6 +16,8 @@ Route::prefix('conversations/{conversation}')
     ->middleware('auth')
     ->group(function () {
         Route::get('messages', MessageController::class);
+
+        Route::get('users', UserController::class);
     });
 
 Route::prefix('users/{user}')
