@@ -1,13 +1,13 @@
 {
     "id": 1,
-    "name": "Noel Quigley",
-    "created_at": "2020-12-16T10:40:41.000000Z",
-    "updated_at": "2020-12-16T10:40:41.000000Z",
+    "name": "Ms. Tressa VonRueden",
+    "created_at": "2020-12-17T11:26:49.000000Z",
+    "updated_at": "2020-12-17T11:26:49.000000Z",
     "users": [
         {
             "id": 2,
-            "created_at": "2020-12-16T10:40:41.000000Z",
-            "updated_at": "2020-12-16T10:40:41.000000Z",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "pivot": {
                 "conversation_id": 1,
                 "user_id": 2
@@ -15,8 +15,8 @@
         },
         {
             "id": 1,
-            "created_at": "2020-12-16T10:40:41.000000Z",
-            "updated_at": "2020-12-16T10:40:41.000000Z",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "pivot": {
                 "conversation_id": 1,
                 "user_id": 1
@@ -28,31 +28,21 @@
             "id": 1,
             "conversation_id": 1,
             "user_id": 3,
-            "body": "Et odit consequuntur dolores natus natus. Aut corporis temporibus et qui voluptatibus ut quaerat. Nihil optio qui eius velit labore.",
+            "body": "Earum nam reprehenderit porro consectetur exercitationem provident labore enim. Iusto itaque tenetur repellendus. Nostrum et esse ut ut et quaerat labore qui. Officiis ea eaque hic voluptas ipsam.",
             "align": "leading",
-            "created_at": "2020-12-16T10:40:41.000000Z",
-            "updated_at": "2020-12-16T10:40:41.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 3,
-                "created_at": "2020-12-16T10:40:41.000000Z",
-                "updated_at": "2020-12-16T10:40:41.000000Z"
-            }
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
+            "current_user_read_message": null
         },
         {
             "id": 2,
             "conversation_id": 1,
             "user_id": 4,
-            "body": "Et molestias quo itaque harum. Cupiditate et temporibus porro fuga dolorum.",
+            "body": "Explicabo et sed ipsum et. Dolor sit repellendus incidunt quasi quo excepturi veritatis. Soluta accusantium consequatur quibusdam quia est.",
             "align": "leading",
-            "created_at": "2020-12-16T10:40:41.000000Z",
-            "updated_at": "2020-12-16T10:40:41.000000Z",
-            "current_user_read_message": null,
-            "user": {
-                "id": 4,
-                "created_at": "2020-12-16T10:40:41.000000Z",
-                "updated_at": "2020-12-16T10:40:41.000000Z"
-            }
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
+            "current_user_read_message": null
         }
     ]
 }

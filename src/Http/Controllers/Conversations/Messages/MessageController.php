@@ -4,6 +4,7 @@ namespace OwowAgency\Gossip\Http\Controllers\Conversations\Messages;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use OwowAgency\Gossip\Managers\MessageManager;
@@ -32,7 +33,11 @@ class MessageController extends Controller
             ])
             ->defaultSort('-created_at')
             ->allowedSorts('created_at', 'updated_at')
-            ->with('user', 'users')
+            ->with(['users' => function ($query) {
+                // This relation is used to determine who read the message. We
+                // only have to check that for the current authenticated user.
+                $query->where('users.id', Auth::id());
+            }])
             ->ofConversation($conversation)
             ->paginate()
             ->appends($request->query());
