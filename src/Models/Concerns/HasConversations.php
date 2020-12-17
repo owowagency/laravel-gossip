@@ -46,14 +46,14 @@ trait HasConversations
      * Scope a query to only include users of the given conversation.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  int  $conversationId
+     * @param  \Illuminate\Database\Eloquent\Model  $conversation
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeOfConversation(Builder $query, int $conversationId): Builder
+    public function scopeOfConversation(Builder $query, Model $conversation): Builder
     {
         return $query->whereHas(
             'conversations',
-            fn($query) => $query->where('conversations.id', $conversationId),
+            fn($query) => $query->where('conversations.id', $conversation->id),
         );
     }
 }

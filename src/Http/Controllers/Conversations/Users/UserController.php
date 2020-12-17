@@ -27,7 +27,7 @@ class UserController extends Controller
                 'name', 'first_name', 'last_name', 'full_name',
             ])
             ->defaultSort('-created_at')
-            ->ofConversation($conversation->id)
+            ->ofConversation($conversation)
             ->paginate()
             ->appends($request->query());
 
