@@ -43,7 +43,7 @@ class MessageResource extends JsonResource
      *
      * @return \Carbon\Carbon|null
      */
-    private function getReadAtTimestamp(): ?Carbon
+    protected function getReadAtTimestamp(): ?Carbon
     {
         if (! $this->relationLoaded('users') || Auth::guest()) {
             return null;
@@ -66,7 +66,7 @@ class MessageResource extends JsonResource
      *
      * @return string
      */
-    private function getAlignment(): string
+    protected function getAlignment(): string
     {
         // If the current authenticated user is the creator of the message, then
         // the alignment should be trailing (right).
