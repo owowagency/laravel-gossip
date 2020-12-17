@@ -26,9 +26,6 @@ Route::prefix('users/{user}')
         Route::get('conversations', [UserConversationController::class, 'index']);
     });
 
-Route::get('/users/{user}/conversations', [UserConversationController::class, 'index'])
-    ->middleware('auth');
-
 Route::prefix('messages/{message}')
     ->middleware('auth')
     ->group(function () {

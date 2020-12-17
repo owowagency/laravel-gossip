@@ -4,16 +4,18 @@
         {
             "id": 2,
             "conversation_id": 1,
-            "body": "Et est facilis qui est voluptatem dolore in. Vel qui eos perspiciatis labore in doloremque nesciunt. Sed provident quam et ea dolorem.",
-            "created_at": "2020-12-16T11:09:21.000000Z",
-            "updated_at": "2020-12-23T11:09:21.000000Z",
+            "user_id": 3,
+            "body": "Neque qui minima aut eius. Illo est eum molestiae dolores. Enim minus quae ut commodi non vel vero beatae.",
+            "align": "leading",
+            "created_at": "2020-12-17T11:26:48.000000Z",
+            "updated_at": "2020-12-24T11:26:48.000000Z",
             "current_user_read_message": null
         }
     ],
-    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2011%3A09%3A21&page=1",
+    "first_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-17%2011%3A26%3A48&page=1",
     "from": 1,
     "last_page": 1,
-    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2011%3A09%3A21&page=1",
+    "last_page_url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-17%2011%3A26%3A48&page=1",
     "links": [
         {
             "url": null,
@@ -21,7 +23,7 @@
             "active": false
         },
         {
-            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-16%2011%3A09%3A21&page=1",
+            "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2020-12-17%2011%3A26%3A48&page=1",
             "label": 1,
             "active": true
         },

@@ -1,13 +1,13 @@
 {
     "id": 1,
-    "name": "Katheryn Krajcik",
-    "created_at": "2020-12-16T11:09:22.000000Z",
-    "updated_at": "2020-12-16T11:09:22.000000Z",
+    "name": "Dr. Judd Kerluke V",
+    "created_at": "2020-12-17T11:26:49.000000Z",
+    "updated_at": "2020-12-17T11:26:49.000000Z",
     "users": [
         {
             "id": 2,
-            "created_at": "2020-12-16T11:09:22.000000Z",
-            "updated_at": "2020-12-16T11:09:22.000000Z",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "pivot": {
                 "conversation_id": 1,
                 "user_id": 2
@@ -15,8 +15,8 @@
         },
         {
             "id": 1,
-            "created_at": "2020-12-16T11:09:22.000000Z",
-            "updated_at": "2020-12-16T11:09:22.000000Z",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "pivot": {
                 "conversation_id": 1,
                 "user_id": 1
@@ -27,17 +27,21 @@
         {
             "id": 1,
             "conversation_id": 1,
-            "body": "Dignissimos error quia voluptas ipsa. Itaque praesentium veniam rem omnis. Id numquam dolor quis aperiam. Aut blanditiis ab id voluptas aut quia ducimus. Blanditiis voluptate a et dolore.",
-            "created_at": "2020-12-16T11:09:22.000000Z",
-            "updated_at": "2020-12-16T11:09:22.000000Z",
+            "user_id": 3,
+            "body": "Nam placeat sunt temporibus consequatur recusandae sed id. Et ad in quia ea exercitationem. Saepe deserunt dolorem praesentium quia illum temporibus.",
+            "align": "leading",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "current_user_read_message": null
         },
         {
             "id": 2,
             "conversation_id": 1,
-            "body": "Occaecati iure non aspernatur quia delectus id accusantium. Deleniti officiis esse ipsa. Neque quaerat voluptate sit ex amet.",
-            "created_at": "2020-12-16T11:09:22.000000Z",
-            "updated_at": "2020-12-16T11:09:22.000000Z",
+            "user_id": 4,
+            "body": "Iure rerum maxime minus sit facere dolorum est iste. Quia nihil aliquid dolor aliquam officia. Voluptatem itaque modi earum molestias.",
+            "align": "leading",
+            "created_at": "2020-12-17T11:26:49.000000Z",
+            "updated_at": "2020-12-17T11:26:49.000000Z",
             "current_user_read_message": null
         }
     ]

@@ -3,14 +3,14 @@
     "data": [
         {
             "id": 1,
-            "name": "Dr. Albin Olson DVM",
-            "created_at": "2020-12-16T11:09:20.000000Z",
-            "updated_at": "2020-12-16T11:09:20.000000Z",
+            "name": "Eunice Nitzsche IV",
+            "created_at": "2020-12-17T11:26:47.000000Z",
+            "updated_at": "2020-12-17T11:26:47.000000Z",
             "users": [
                 {
                     "id": 2,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 1,
                         "user_id": 2
@@ -18,8 +18,8 @@
                 },
                 {
                     "id": 3,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 1,
                         "user_id": 3
@@ -30,31 +30,35 @@
                 {
                     "id": 1,
                     "conversation_id": 1,
-                    "body": "Porro totam aliquam quia nihil saepe ipsa. Blanditiis cum placeat accusamus vero expedita. Quia qui est earum consequatur aut. Ex harum quo occaecati nihil odit aut harum.",
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "user_id": 4,
+                    "body": "Non voluptatibus distinctio quos. Esse ipsam ipsum quis omnis inventore. Fugit natus aut architecto autem.",
+                    "align": "leading",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "current_user_read_message": null
                 },
                 {
                     "id": 2,
                     "conversation_id": 1,
-                    "body": "Repellat voluptates veniam sed facilis quia dolore quaerat. Amet nemo voluptatibus ut magnam. Molestiae tenetur debitis consequuntur et deserunt autem quas aliquam.",
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "user_id": 5,
+                    "body": "Non sapiente ducimus est vel. Odit quaerat est officia.",
+                    "align": "leading",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "current_user_read_message": null
                 }
             ]
         },
         {
             "id": 2,
-            "name": "Alden Botsford",
-            "created_at": "2020-12-16T11:09:20.000000Z",
-            "updated_at": "2020-12-16T11:09:20.000000Z",
+            "name": "Veda Hammes",
+            "created_at": "2020-12-17T11:26:47.000000Z",
+            "updated_at": "2020-12-17T11:26:47.000000Z",
             "users": [
                 {
                     "id": 6,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 2,
                         "user_id": 6
@@ -62,8 +66,8 @@
                 },
                 {
                     "id": 7,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 2,
                         "user_id": 7
@@ -74,23 +78,25 @@
                 {
                     "id": 3,
                     "conversation_id": 2,
-                    "body": "Ratione unde consectetur ipsam consequatur omnis quae. Non explicabo nobis magnam dolorem adipisci. Qui ut quos sequi occaecati.",
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "user_id": 8,
+                    "body": "Ipsum fugit delectus possimus quam maxime aut aut. Et esse ipsum beatae. Consectetur reprehenderit rem inventore consectetur.",
+                    "align": "leading",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "current_user_read_message": null
                 }
             ]
         },
         {
             "id": 3,
-            "name": "Rick Lesch",
-            "created_at": "2020-12-16T11:09:20.000000Z",
-            "updated_at": "2020-12-16T11:09:20.000000Z",
+            "name": "Luciano Ziemann",
+            "created_at": "2020-12-17T11:26:47.000000Z",
+            "updated_at": "2020-12-17T11:26:47.000000Z",
             "users": [
                 {
                     "id": 10,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 3,
                         "user_id": 10
@@ -98,8 +104,8 @@
                 },
                 {
                     "id": 11,
-                    "created_at": "2020-12-16T11:09:20.000000Z",
-                    "updated_at": "2020-12-16T11:09:20.000000Z",
+                    "created_at": "2020-12-17T11:26:47.000000Z",
+                    "updated_at": "2020-12-17T11:26:47.000000Z",
                     "pivot": {
                         "conversation_id": 3,
                         "user_id": 11
