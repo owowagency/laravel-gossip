@@ -7,8 +7,8 @@ use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Models\Media;
 use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
-use Owowagency\LaravelMedia\Managers\MediaManager;
 
 class IndexTest extends TestCase
 {
@@ -89,7 +89,10 @@ class IndexTest extends TestCase
         // Add user as participant.
         $conversation->users()->attach($user);
 
-        MediaManager::upload(Message::find(1), $this->base64);
+        Media::factory()->create([
+            'model_id' => 1,
+            'model_type' => (new Message())->getMorphClass(),
+        ]);
 
         return [$user, $conversation];
     }
