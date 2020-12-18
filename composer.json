@@ -24,6 +24,7 @@
     "require": {
         "php": "^7.4|^8.0",
         "laravel/framework": "^8.0",
+        "owowagency/laravel-media": "^1.0.3",
         "owowagency/laravel-resources": "^3.0",
         "spatie/laravel-permission": "^3.18",
         "spatie/laravel-query-builder": "^3.3"

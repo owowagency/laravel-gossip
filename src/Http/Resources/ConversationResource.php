@@ -14,7 +14,7 @@ class ConversationResource extends JsonResource
      */
     public function toArray($request): array
     {
-        $messageResource = config('gossip.resources.message');
+        $resources = config('gossip.resources');
 
         return [
             'id' => $this->id,
@@ -23,11 +23,11 @@ class ConversationResource extends JsonResource
             'updated_at' => $this->updated_at,
             'users' => $this->whenLoaded(
                 'users',
-                fn() => resource($this->users)
+                fn() => $resources['user']::collection($this->users),
             ),
             'messages' => $this->whenLoaded(
                 'messages',
-                fn() => $messageResource::collection($this->messages)
+                fn() => $resources['message']::collection($this->messages)
             ),
         ];
     }

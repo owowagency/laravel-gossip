@@ -17,6 +17,8 @@ class MessageResource extends JsonResource
      */
     public function toArray($request): array
     {
+        $resources = config('gossip.resources');
+
         return [
             'id' => $this->id,
             'conversation_id' => $this->conversation_id,
@@ -28,11 +30,15 @@ class MessageResource extends JsonResource
             'current_user_read_message' => $this->getReadAtTimestamp(),
             'user' => $this->whenLoaded(
                 'user',
-                fn() => resource($this->user)
+                fn() => new $resources['user']($this->user),
             ),
             'conversation' => $this->whenLoaded(
                 'conversation',
-                fn() => resource($this->conversation)
+                fn() => new $resources['conversation']($this->conversation),
+            ),
+            'media' => $this->whenLoaded(
+                'media',
+                fn() => $resources['media']::collection($this->media, true),
             ),
         ];
     }

@@ -33,7 +33,7 @@ class MessageController extends Controller
             ])
             ->defaultSort('-created_at')
             ->allowedSorts('created_at', 'updated_at')
-            ->with(['users' => function ($query) {
+            ->with(['media', 'users' => function ($query) {
                 // This relation is used to determine who read the message. We
                 // only have to check that for the current authenticated user.
                 $query->where('users.id', Auth::id());

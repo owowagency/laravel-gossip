@@ -12,6 +12,7 @@ return [
         'user' => \App\Http\Resources\UserResource::class,
         'conversation' => \OwowAgency\Gossip\Http\Resources\ConversationResource::class,
         'message' => \OwowAgency\Gossip\Http\Resources\MessageResource::class,
+        'media' => \Owowagency\LaravelMedia\Resources\MediaResource::class,
     ],
 
 ];
