@@ -7,10 +7,18 @@ use OwowAgency\Gossip\Models\Message;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\Support\Models\User;
+use OwowAgency\Gossip\Tests\Support\Models\Media;
 use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class IndexTest extends TestCase
 {
+    /**
+     * The base64 image string.
+     *
+     * @var string
+     */
+    protected string $base64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=';
+
     /** @test */
     public function admin_can_index_messages_of_a_conversation(): void
     {
@@ -80,6 +88,11 @@ class IndexTest extends TestCase
 
         // Add user as participant.
         $conversation->users()->attach($user);
+
+        Media::factory()->create([
+            'model_id' => 1,
+            'model_type' => (new Message())->getMorphClass(),
+        ]);
 
         return [$user, $conversation];
     }

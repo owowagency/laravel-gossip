@@ -2,6 +2,7 @@
 
 namespace OwowAgency\Gossip\Tests;
 
+use Illuminate\Filesystem\Filesystem;
 use OwowAgency\Gossip\ServiceProvider;
 use OwowAgency\Snapshots\MatchesSnapshots;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -9,6 +10,7 @@ use OwowAgency\LaravelTestResponse\TestResponse;
 use OwowAgency\Gossip\Tests\Support\Models\User;
 use Spatie\Permission\PermissionServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Spatie\MediaLibrary\MediaLibraryServiceProvider;
 use Spatie\QueryBuilder\QueryBuilderServiceProvider;
 use OwowAgency\Gossip\Tests\Support\TestServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithTime;
@@ -32,6 +34,10 @@ abstract class TestCase extends BaseTestCase
             'gossip.models.user' => User::class,
             'gossip.resources.user' => JsonResource::class,
         ]);
+
+        // Clear out all migrations.
+        $file = new Filesystem();
+        $file->cleanDirectory(database_path('migrations'));
 
         // Publish the vendor files. This will register the migrations of all
         // dependencies.
@@ -64,6 +70,7 @@ abstract class TestCase extends BaseTestCase
             LaravelResourcesServiceProvider::class,
             QueryBuilderServiceProvider::class,
             PermissionServiceProvider::class,
+            MediaLibraryServiceProvider::class,
         ];
     }
 

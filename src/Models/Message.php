@@ -2,8 +2,10 @@
 
 namespace OwowAgency\Gossip\Models;
 
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use OwowAgency\Gossip\Factories\MessageFactory;
 use OwowAgency\Gossip\Models\Concerns\HasDateScopes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,9 +15,9 @@ use OwowAgency\Gossip\Support\Collection\MessageCollection;
 use OwowAgency\Gossip\Models\Contracts\HasConversationContract;
 use OwowAgency\Gossip\Support\Exceptions\RelationNotLoadedException;
 
-class Message extends Model
+class Message extends Model implements HasMedia
 {
-    use HasDateScopes, HasFactory;
+    use HasDateScopes, HasFactory, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
@@ -130,6 +132,16 @@ class Message extends Model
     public function checkIfUsersAreLoaded(): void
     {
         throw_if(! $this->relationLoaded('users'), new RelationNotLoadedException('users'));
+    }
+
+    /**
+     * Register the media collections for this model.
+     *
+     * @return void
+     */
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('attachments');
     }
 
     /**
