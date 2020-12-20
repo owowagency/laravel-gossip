@@ -55,7 +55,7 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->publishes(
             [
-                __DIR__ . '/../database/migrations'
+                __DIR__ . '/../database/migrations' => database_path('migrations'),
             ],
             [$this->name, "$this->name.migrations", 'migrations'],
         );
