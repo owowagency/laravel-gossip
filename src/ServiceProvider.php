@@ -22,8 +22,6 @@ class ServiceProvider extends BaseServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
 
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-
         $this->loadTranslationsFrom(__DIR__.'/../translations', $this->name);
 
         $this->registerPublishableFiles();
