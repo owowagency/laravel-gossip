@@ -35,6 +35,7 @@ class MessageController extends Controller
             ->allowedSorts('created_at', 'updated_at')
             ->with([
                 'media',
+                'user',
                 'users' => function ($query) {
                     // This relation is used to determine who read the message. We
                     // only have to check that for the current authenticated user.
