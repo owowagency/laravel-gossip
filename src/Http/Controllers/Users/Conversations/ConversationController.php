@@ -44,7 +44,7 @@ class ConversationController extends Controller
      * @param  int|string  $conversation
      * @return \Illuminate\Http\JsonResponse
      */
-    public function leave($conversationId): JsonResponse
+    public function destroy($conversationId): JsonResponse
     {
         $conversation = $this->getModel($conversationId);
         $user = auth()->user();

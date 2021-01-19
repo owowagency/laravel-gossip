@@ -6,7 +6,6 @@ use Illuminate\Testing\TestResponse;
 use OwowAgency\Gossip\Models\Conversation;
 use OwowAgency\Gossip\Tests\TestCase;
 use OwowAgency\Gossip\Tests\Support\Models\User;
-use OwowAgency\Gossip\Tests\Support\Enumerations\Role;
 
 class DestroyTest extends TestCase
 {
