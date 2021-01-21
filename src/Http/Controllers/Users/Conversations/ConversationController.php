@@ -40,7 +40,7 @@ class ConversationController extends Controller
 
     /**
      * Leave a conversation
-     * 
+     *
      * @param  int|string  $conversation
      * @return \Illuminate\Http\JsonResponse
      */
@@ -49,7 +49,7 @@ class ConversationController extends Controller
         $conversation = $this->getModel($conversationId);
         $user = auth()->user();
 
-        if($user->conversations->contains($conversation)) {
+        if ($user->conversations->contains($conversation)) {
             $user->conversations()->detach($conversationId);
         } else {
             return unprocessable_entity();
