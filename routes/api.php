@@ -18,6 +18,8 @@ Route::prefix('conversations/{conversation}')
         Route::get('messages', MessageController::class);
 
         Route::get('users', UserController::class);
+
+        Route::delete('leave', [UserConversationController::class, 'destroy']);
     });
 
 Route::prefix('users/{user}')
