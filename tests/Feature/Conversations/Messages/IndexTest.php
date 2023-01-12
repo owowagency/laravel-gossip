@@ -90,7 +90,7 @@ class IndexTest extends TestCase
         $conversation->users()->attach($user);
 
         Media::factory()->create([
-            'model_id' => 1,
+            'model_id' => 30,
             'model_type' => (new Message())->getMorphClass(),
         ]);
 

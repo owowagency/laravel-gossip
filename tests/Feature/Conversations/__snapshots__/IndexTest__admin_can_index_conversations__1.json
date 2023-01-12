@@ -127,7 +127,7 @@
         },
         {
             "url": "http:\/\/localhost\/conversations?page=1",
-            "label": 1,
+            "label": "1",
             "active": true
         },
         {

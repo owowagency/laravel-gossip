@@ -68,7 +68,7 @@
         },
         {
             "url": "http:\/\/localhost\/users\/1\/conversations?page=1",
-            "label": 1,
+            "label": "1",
             "active": true
         },
         {

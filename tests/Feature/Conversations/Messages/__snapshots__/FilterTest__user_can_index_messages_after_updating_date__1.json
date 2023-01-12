@@ -30,7 +30,7 @@
         },
         {
             "url": "http:\/\/localhost\/conversations\/1\/messages?filter%5Bupdated_after%5D=2021-01-12%2011%3A35%3A21&page=1",
-            "label": 1,
+            "label": "1",
             "active": true
         },
         {
